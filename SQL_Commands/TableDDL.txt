@@ -1,0 +1,12 @@
+mysql> create table ACCOUNT(
+    -> Sno int Auto_Increment,
+    -> Fname varchar(20),
+    -> Lname varchar(30),
+    -> Email_id varchar(20) not null,
+    -> Password varchar(15) not null,
+    -> Primary key(Sno)
+    -> );
+[Amysql> create table GENRE(
+    -> Genre_id int primary key,
+    -> Name varchar(15) not null
+    -> );
