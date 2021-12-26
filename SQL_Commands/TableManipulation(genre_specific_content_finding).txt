@@ -56,6 +56,19 @@ mysql> select * from BookGenre;
 mysql> create view difference as
     -> select Book_id,Genre_id from BookGenre where (Book_id,Genre_id) not in (Select Book_id,Genre_id from Novel_Genre);
 
+mysql> select * from difference;
++---------+----------+
+| Book_id | Genre_id |
++---------+----------+
+|       4 |        2 |
+|       3 |        2 |
+|       2 |        2 |
+|       4 |        9 |
++---------+----------+
+
+
+--Creating a view showing the Book_id for those novels that follows the genres as asked in selectedGenres
+
 mysql> select Book_id from Novel_Genre where Book_id not in (select Book_id from Difference);
 +---------+
 | Book_id |
@@ -75,9 +88,6 @@ mysql> select Book_id from Novel_Genre where Book_id not in (select Book_id from
 |       5 |
 |       5 |
 +---------+
-
-
---Creating a view showing the Book_id for those novels that follows the genres as asked in selectedGenres
 
 mysql> create view Result as
     -> select Distinct(Book_id) from Novel_Genre where Book_id not in (select Book_id from Difference);
