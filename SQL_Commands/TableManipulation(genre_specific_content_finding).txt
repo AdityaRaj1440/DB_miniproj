@@ -1,0 +1,102 @@
+--Creating a view showing the selected genres for choosing a novel/comic
+
+mysql> create view selectedGenre as
+    -> select Book_id from GENRE where name in ("Action","Fantasy");
+
+mysql> select * from selectedGenre;
++----------+
+| Genre_id |
++----------+
+|        2 |
+|        9 |
++----------+
+
+
+--Creating a view showing the distinct Books
+
+mysql> create view distinctBook as
+    -> select distinct(Book_id) from Novel_genre;
+
+mysql> select * from distinctBook;
++---------+
+| Book_id |
++---------+
+|       1 |
+|       2 |
+|       3 |
+|       4 |
+|       5 |
++---------+
+
+
+--Creating a view showing the cross joining of Distinct Novels and Selected Genres
+
+mysql> create view BookGenre as
+    -> select * from distinctBook cross join selectedGenre;
+
+mysql> select * from BookGenre;
++---------+----------+
+| Book_id | Genre_id |
++---------+----------+
+|       5 |        2 |
+|       4 |        2 |
+|       3 |        2 |
+|       2 |        2 |
+|       1 |        2 |
+|       5 |        9 |
+|       4 |        9 |
+|       3 |        9 |
+|       2 |        9 |
+|       1 |        9 |
++---------+----------+
+
+
+--Creating a view showing the difference between relational view BookGenre and relation Novel_Genre
+
+mysql> create view difference as
+    -> select Book_id,Genre_id from BookGenre where (Book_id,Genre_id) not in (Select Book_id,Genre_id from Novel_Genre);
+
+mysql> select Book_id from Novel_Genre where Book_id not in (select Book_id from Difference);
++---------+
+| Book_id |
++---------+
+|       1 |
+|       1 |
+|       1 |
+|       1 |
+|       1 |
+|       5 |
+|       5 |
+|       5 |
+|       5 |
+|       5 |
+|       5 |
+|       5 |
+|       5 |
+|       5 |
++---------+
+
+
+--Creating a view showing the Book_id for those novels that follows the genres as asked in selectedGenres
+
+mysql> create view Result as
+    -> select Distinct(Book_id) from Novel_Genre where Book_id not in (select Book_id from Difference);
+
+mysql> select * from Result;
++---------+
+| Book_id |
++---------+
+|       1 |
+|       5 |
++---------+
+
+
+--Showing the novel details that has all the genres as mentioned in the seletedGenre
+
+mysql> select * from Novels where Book_id in (select * from Result);
++---------+-------------------------------+-----------+----------+----------------+--------------+--------------+--------------+
+| Book_id | Name                          | Status    | Origin   | Total_Chapters | Release_Date | Last_Updated | Author_Name  |
++---------+-------------------------------+-----------+----------+----------------+--------------+--------------+--------------+
+|       1 | Omniscient Reader's Viewpoint | Completed | Korean   |            551 |         2018 | 2020-03-06   | Shing-Shong  |
+|       5 | Sevens                        | Completed | Japanese |            367 |         2014 | 2018-06-18   | Mishima Yomu |
++---------+-------------------------------+-----------+----------+----------------+--------------+--------------+--------------+

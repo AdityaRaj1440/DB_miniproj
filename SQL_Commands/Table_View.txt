@@ -41,3 +41,41 @@ mysql> select * from GENRE;
 |       37 | Yaoi          |
 |       38 | Yuri          |
 +----------+---------------+
+
+mysql> select * from NOVELS;
++---------+-------------------------------+-----------+----------+----------------+--------------+--------------+------------------------------+
+| Book_id | Name                          | Status    | Origin   | Total_Chapters | Release_Date | Last_Updated | Author_Name                  |
++---------+-------------------------------+-----------+----------+----------------+--------------+--------------+------------------------------+
+|       1 | Omniscient Reader's Viewpoint | Completed | Korean   |            551 |         2018 | 2020-03-06   | Shing-Shong                  |
+|       2 | Only I Level Up Alone         | Completed | Korean   |            270 |         2016 | 2018-04-18   | Chugong                      |
+|       3 | Embers ad Infinitum           | Ongoing   | Chinese  |            676 |         2020 | 2021-12-26   | Cuttlefish that loves diving |
+|       4 | A Game to Make Him Fall       | Completed | Japanese |              1 |         2016 | NULL         | Kare wo Kanrakusareru Game   |
+|       5 | Sevens                        | Completed | Japanese |            367 |         2014 | 2018-06-18   | Mishima Yomu                 |
++---------+-------------------------------+-----------+----------+----------------+--------------+--------------+------------------------------+
+
+mysql> select * from Novel_Genre;
++----------+---------+
+| Genre_id | Book_id |
++----------+---------+
+|        1 |       1 |
+|        2 |       1 |
+|        7 |       1 |
+|        9 |       1 |
+|       22 |       1 |
+|        1 |       2 |
+|        9 |       2 |
+|        9 |       3 |
+|       25 |       3 |
+|        7 |       4 |
+|       23 |       4 |
+|       31 |       4 |
+|        1 |       5 |
+|        2 |       5 |
+|        4 |       5 |
+|        7 |       5 |
+|        9 |       5 |
+|       11 |       5 |
+|       20 |       5 |
+|       22 |       5 |
+|       23 |       5 |
++----------+---------+
