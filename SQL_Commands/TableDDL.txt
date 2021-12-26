@@ -24,12 +24,12 @@ mysql> create table GENRE(
     -> );
 
 mysql> desc GENRE;
-+----------+-------------+------+-----+---------+-------+
-| Field    | Type        | Null | Key | Default | Extra |
-+----------+-------------+------+-----+---------+-------+
-| Genre_id | int         | NO   | PRI | NULL    |       |
-| Name     | varchar(15) | NO   |     | NULL    |       |
-+----------+-------------+------+-----+---------+-------+
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| Genre_id | int         | NO   | PRI | NULL    | auto_increment |
+| Name     | varchar(15) | NO   |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
 
 mysql> create table NOVELS(
     -> Book_id int primary key,
