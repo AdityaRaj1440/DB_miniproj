@@ -19,7 +19,7 @@ mysql> desc ACCOUNT;
 +----------+-------------+------+-----+---------+----------------+
 
 mysql> create table GENRE(
-    -> Genre_id int primary key,
+    -> Genre_id int not null auto_increment primary key,
     -> Name varchar(15) not null
     -> );
 
