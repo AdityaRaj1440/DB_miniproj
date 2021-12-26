@@ -20,3 +20,10 @@ mysql> create table NOVELS(
     -> Last_Updated Date,
     -> Author_Name varchar(30) not null
     -> );
+mysql> create table NOVEL_GENRE(
+    -> Genre_id int,
+    -> Book_id int,
+    -> Primary key(Genre_id,Book_id),
+    -> Foreign key(Genre_id) references Genre(Genre_id) on delete cascade,
+    -> Foreign key(Book_id) references NOVELS(Book_id) on delete cascade
+    -> );
