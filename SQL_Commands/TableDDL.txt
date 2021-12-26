@@ -19,17 +19,17 @@ mysql> desc ACCOUNT;
 +----------+-------------+------+-----+---------+----------------+
 
 mysql> create table GENRE(
-    -> Genre_id int primary key,
+    -> Genre_id int not null auto_increment primary key,
     -> Name varchar(15) not null
     -> );
 
 mysql> desc GENRE;
-+----------+-------------+------+-----+---------+-------+
-| Field    | Type        | Null | Key | Default | Extra |
-+----------+-------------+------+-----+---------+-------+
-| Genre_id | int         | NO   | PRI | NULL    |       |
-| Name     | varchar(15) | NO   |     | NULL    |       |
-+----------+-------------+------+-----+---------+-------+
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| Genre_id | int         | NO   | PRI | NULL    | auto_increment |
+| Name     | varchar(15) | NO   |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
 
 mysql> create table NOVELS(
     -> Book_id int primary key,
