@@ -1,0 +1,6 @@
+--Insertion in GENRE Table
+
+mysql> insert into GENRE (Name) values ('Adventure'), ('Action'), ('Adult'), ('Comedy'), ('Cooking'), ('Doujinshi'), ('Drama'), ('Ecchi'), ('Fantasy'), ('Gender-Bender')
+    -> ,('Harem'), ('Historical'), ('Horror'), ('Isekai'), ('Josei'), ('Martial Arts'), ('Mature'), ('Mecha'), ('Medical'), ('Mystery'), ('Oneshot'), ('Psychological'),
+    -> ('Romance'), ('School life'), ('Sci-fi'), ('Seinen'), ('Shoujo'), ('Shoujo ai'), ('Shounen'), ('Shounen ai'), ('Slice of life'), ('Smut'), ('Sports'),
+    -> ('Supernatural'), ('Tragedy'), ('Webtoons'), ('Yaoi'), ('Yuri');
