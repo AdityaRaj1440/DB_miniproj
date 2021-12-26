@@ -82,7 +82,7 @@ mysql> create table COMICS(
     -> Primary key(Origin_id,Comic_id)
     -> );
 
-mysql> desc comics;
+mysql> desc COMICS;
 +----------------+-------------+------+-----+---------+-------+
 | Field          | Type        | Null | Key | Default | Extra |
 +----------------+-------------+------+-----+---------+-------+
@@ -93,3 +93,21 @@ mysql> desc comics;
 | Total_Chapters | int         | YES  |     | NULL    |       |
 | Other_Media    | char(2)     | YES  |     | NULL    |       |
 +----------------+-------------+------+-----+---------+-------+
+
+mysql> create table COMIC_GENRE(
+    -> Origin_id char(3),
+    -> Comic_id int,
+    -> Genre_id int,
+    -> Primary key(Origin_id,Comic_id,Genre_id),
+    -> Foreign key(Origin_id,Comic_id) references COMICS(Origin_id,Comic_id) on delete cascade,
+    -> Foreign key(Genre_id) references GENRE(Genre_id) on delete cascade
+    -> );
+
+mysql> desc COMIC_GENRE;
++-----------+---------+------+-----+---------+-------+
+| Field     | Type    | Null | Key | Default | Extra |
++-----------+---------+------+-----+---------+-------+
+| Origin_id | char(3) | NO   | PRI | NULL    |       |
+| Comic_id  | int     | NO   | PRI | NULL    |       |
+| Genre_id  | int     | NO   | PRI | NULL    |       |
++-----------+---------+------+-----+---------+-------+
