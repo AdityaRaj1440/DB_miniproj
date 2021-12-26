@@ -6,10 +6,31 @@ mysql> create table ACCOUNT(
     -> Password varchar(15) not null,
     -> Primary key(Sno)
     -> );
+
+mysql> desc ACCOUNT;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| Sno      | int         | NO   | PRI | NULL    | auto_increment |
+| Fname    | varchar(20) | YES  |     | NULL    |                |
+| Lname    | varchar(30) | YES  |     | NULL    |                |
+| Email_id | varchar(20) | NO   |     | NULL    |                |
+| Password | varchar(15) | NO   |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+
 mysql> create table GENRE(
     -> Genre_id int primary key,
     -> Name varchar(15) not null
     -> );
+
+mysql> desc GENRE;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| Genre_id | int         | NO   | PRI | NULL    |       |
+| Name     | varchar(15) | NO   |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
 mysql> create table NOVELS(
     -> Book_id int primary key,
     -> Name varchar(40),
@@ -20,6 +41,21 @@ mysql> create table NOVELS(
     -> Last_Updated Date,
     -> Author_Name varchar(30) not null
     -> );
+
+mysql> desc NOVELS;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| Book_id        | int         | NO   | PRI | NULL    |       |
+| Name           | varchar(40) | YES  |     | NULL    |       |
+| Status         | varchar(15) | YES  |     | NULL    |       |
+| Origin         | char(15)    | YES  |     | NULL    |       |
+| Total_Chapters | int         | YES  |     | NULL    |       |
+| Release_Date   | date        | YES  |     | NULL    |       |
+| Last_Updated   | date        | YES  |     | NULL    |       |
+| Author_Name    | varchar(30) | NO   |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+
 mysql> create table NOVEL_GENRE(
     -> Genre_id int,
     -> Book_id int,
@@ -27,3 +63,33 @@ mysql> create table NOVEL_GENRE(
     -> Foreign key(Genre_id) references Genre(Genre_id) on delete cascade,
     -> Foreign key(Book_id) references NOVELS(Book_id) on delete cascade
     -> );
+
+mysql> desc NOVEL_GENRE;
++----------+------+------+-----+---------+-------+
+| Field    | Type | Null | Key | Default | Extra |
++----------+------+------+-----+---------+-------+
+| Genre_id | int  | NO   | PRI | NULL    |       |
+| Book_id  | int  | NO   | PRI | NULL    |       |
++----------+------+------+-----+---------+-------+
+
+mysql> create table COMICS(
+    -> Origin_id char(3),
+    -> Comic_id int,
+    -> Name varchar(30),
+    -> Status char(10),
+    -> Total_Chapters int,
+    -> Other_Media char(2),
+    -> Primary key(Origin_id,Comic_id)
+    -> );
+
+mysql> desc comics;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| Origin_id      | char(3)     | NO   | PRI | NULL    |       |
+| Comic_id       | int         | NO   | PRI | NULL    |       |
+| Name           | varchar(30) | YES  |     | NULL    |       |
+| Status         | char(10)    | YES  |     | NULL    |       |
+| Total_Chapters | int         | YES  |     | NULL    |       |
+| Other_Media    | char(2)     | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
