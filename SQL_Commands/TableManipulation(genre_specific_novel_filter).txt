@@ -1,7 +1,7 @@
 --Creating a view showing the selected genres for choosing a novel/comic
 
 mysql> create view selectedGenre as
-    -> select Book_id from GENRE where name in ("Action","Fantasy");
+    -> select Genre_id from GENRE where name in ("Action","Fantasy");
 
 mysql> select * from selectedGenre;
 +----------+

@@ -1,0 +1,119 @@
+mysql> select * from selectedGenre;
++----------+
+| Genre_id |
++----------+
+|        7 |
+|       23 |
++----------+
+
+mysql> create view distinctComic as
+    -> select distinct Origin_id,Comic_id from Comic_genre;
+
+mysql> select * from distinctComic;
++-----------+----------+
+| Origin_id | Comic_id |
++-----------+----------+
+| CHN       |        1 |
+| CHN       |        2 |
+| CHN       |        3 |
+| CHN       |        4 |
+| JPN       |        1 |
+| JPN       |        2 |
+| JPN       |        3 |
+| JPN       |        4 |
+| JPN       |        5 |
+| KRN       |        1 |
+| KRN       |        2 |
+| KRN       |        3 |
+| KRN       |        4 |
+| KRN       |        5 |
++-----------+----------+
+
+
+mysql> create view MangaGenre as
+    -> select * from distinctComic cross join selectedGenre;
+
+mysql> select * from MangaGenre;
++-----------+----------+----------+
+| Origin_id | Comic_id | Genre_id |
++-----------+----------+----------+
+| CHN       |        1 |       23 |
+| CHN       |        1 |        7 |
+| CHN       |        2 |       23 |
+| CHN       |        2 |        7 |
+| CHN       |        3 |       23 |
+| CHN       |        3 |        7 |
+| CHN       |        4 |       23 |
+| CHN       |        4 |        7 |
+| JPN       |        1 |       23 |
+| JPN       |        1 |        7 |
+| JPN       |        2 |       23 |
+| JPN       |        2 |        7 |
+| JPN       |        3 |       23 |
+| JPN       |        3 |        7 |
+| JPN       |        4 |       23 |
+| JPN       |        4 |        7 |
+| JPN       |        5 |       23 |
+| JPN       |        5 |        7 |
+| KRN       |        1 |       23 |
+| KRN       |        1 |        7 |
+| KRN       |        2 |       23 |
+| KRN       |        2 |        7 |
+| KRN       |        3 |       23 |
+| KRN       |        3 |        7 |
+| KRN       |        4 |       23 |
+| KRN       |        4 |        7 |
+| KRN       |        5 |       23 |
+| KRN       |        5 |        7 |
++-----------+----------+----------+
+
+mysql> create view ComicDifference as
+    -> select * from MangaGenre where (Origin_id,Comic_id,Genre_id) not in
+    -> (Select Origin_id,Comic_id,Genre_id from Comic_Genre);
+
+mysql> select * from ComicDifference;
++-----------+----------+----------+
+| Origin_id | Comic_id | Genre_id |
++-----------+----------+----------+
+| CHN       |        1 |       23 |
+| CHN       |        3 |       23 |
+| CHN       |        3 |        7 |
+| CHN       |        4 |       23 |
+| CHN       |        4 |        7 |
+| JPN       |        1 |       23 |
+| JPN       |        1 |        7 |
+| JPN       |        2 |       23 |
+| JPN       |        3 |       23 |
+| JPN       |        4 |       23 |
+| JPN       |        5 |       23 |
+| JPN       |        5 |        7 |
+| KRN       |        1 |       23 |
+| KRN       |        1 |        7 |
+| KRN       |        2 |       23 |
+| KRN       |        3 |       23 |
+| KRN       |        3 |        7 |
+| KRN       |        4 |       23 |
+| KRN       |        4 |        7 |
+| KRN       |        5 |       23 |
++-----------+----------+----------+
+
+
+
+mysql> create view ComicResult as
+    -> select Distinct Origin_id,Comic_id from Comic_genre where (Origin_id,Comic_id) not in
+    -> (Select Origin_id, Comic_id from ComicDifference);
+
+mysql> select * from ComicResult;
++-----------+----------+
+| Origin_id | Comic_id |
++-----------+----------+
+| CHN       |        2 |
++-----------+----------+
+
+
+mysql> select * from Comics where (Origin_id,Comic_id) in (Select * from ComicResult);
++-----------+----------+--------------------------+---------+----------------+-------------+
+| Origin_id | Comic_id | Name                     | Status  | Total_Chapters | Other_Media |
++-----------+----------+--------------------------+---------+----------------+-------------+
+| CHN       |        2 | Tales of Demons and Gods | Ongoing |            367 | N           |
++-----------+----------+--------------------------+---------+----------------+-------------+

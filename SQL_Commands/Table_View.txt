@@ -79,3 +79,131 @@ mysql> select * from Novel_Genre;
 |       22 |       5 |
 |       23 |       5 |
 +----------+---------+
+
+
+mysql> select * from comics;
++-----------+----------+-------------------------------+-----------+----------------+-------------+
+| Origin_id | Comic_id | Name                          | Status    | Total_Chapters | Other_Media |
++-----------+----------+-------------------------------+-----------+----------------+-------------+
+| CHN       |        1 | Versatile Mage                | Ongoing   |            804 | Y           |
+| CHN       |        2 | Tales of Demons and Gods      | Ongoing   |            367 | N           |
+| CHN       |        3 | 19 Days                       | Ongoing   |            377 | N           |
+| CHN       |        4 | Journey to the West           | Ongoing   |            114 | N           |
+| JPN       |        1 | Jujutsu Kaisen                | Ongoing   |            170 | Y           |
+| JPN       |        2 | Attack On Titan               | Completed |            139 | Y           |
+| JPN       |        3 | Naruto                        | Completed |            700 | Y           |
+| JPN       |        4 | Bleach                        | Completed |            686 | Y           |
+| JPN       |        5 | My Hero Academia              | Ongoing   |            338 | Y           |
+| KRN       |        1 | Solo Levelling                | Ongoing   |            178 | N           |
+| KRN       |        2 | Tower Of God                  | Ongoing   |            523 | Y           |
+| KRN       |        3 | The God of High School        | Ongoing   |            526 | Y           |
+| KRN       |        4 | Omniscient Reader's Viewpoint | Ongoing   |             86 | N           |
+| KRN       |        5 | Peerless Dad                  | Ongoing   |            200 | N           |
++-----------+----------+-------------------------------+-----------+----------------+-------------+
+
+
+mysql> select * from comic_Genre;
++-----------+----------+----------+
+| Origin_id | Comic_id | Genre_id |
++-----------+----------+----------+
+| CHN       |        1 |        1 |
+| CHN       |        2 |        1 |
+| CHN       |        4 |        1 |
+| JPN       |        2 |        1 |
+| JPN       |        3 |        1 |
+| JPN       |        4 |        1 |
+| KRN       |        1 |        1 |
+| KRN       |        2 |        1 |
+| KRN       |        3 |        1 |
+| KRN       |        4 |        1 |
+| CHN       |        1 |        2 |
+| CHN       |        2 |        2 |
+| CHN       |        4 |        2 |
+| JPN       |        1 |        2 |
+| JPN       |        2 |        2 |
+| JPN       |        3 |        2 |
+| JPN       |        4 |        2 |
+| JPN       |        5 |        2 |
+| KRN       |        1 |        2 |
+| KRN       |        2 |        2 |
+| KRN       |        3 |        2 |
+| KRN       |        4 |        2 |
+| KRN       |        5 |        2 |
+| JPN       |        2 |        3 |
+| JPN       |        3 |        3 |
+| JPN       |        4 |        3 |
+| CHN       |        2 |        4 |
+| CHN       |        3 |        4 |
+| JPN       |        2 |        4 |
+| JPN       |        3 |        4 |
+| JPN       |        4 |        4 |
+| JPN       |        5 |        4 |
+| KRN       |        2 |        4 |
+| KRN       |        3 |        4 |
+| KRN       |        5 |        4 |
+| JPN       |        2 |        6 |
+| JPN       |        3 |        6 |
+| JPN       |        4 |        6 |
+| CHN       |        1 |        7 |
+| CHN       |        2 |        7 |
+| JPN       |        2 |        7 |
+| JPN       |        3 |        7 |
+| JPN       |        4 |        7 |
+| KRN       |        2 |        7 |
+| KRN       |        5 |        7 |
+| CHN       |        1 |        9 |
+| CHN       |        2 |        9 |
+| CHN       |        4 |        9 |
+| JPN       |        2 |        9 |
+| JPN       |        3 |        9 |
+| JPN       |        4 |        9 |
+| JPN       |        5 |        9 |
+| KRN       |        1 |        9 |
+| KRN       |        2 |        9 |
+| KRN       |        4 |        9 |
+| KRN       |        5 |        9 |
+| CHN       |        2 |       11 |
+| JPN       |        2 |       13 |
+| JPN       |        4 |       13 |
+| CHN       |        1 |       16 |
+| CHN       |        4 |       16 |
+| JPN       |        3 |       16 |
+| JPN       |        4 |       16 |
+| KRN       |        3 |       16 |
+| KRN       |        5 |       16 |
+| JPN       |        2 |       17 |
+| JPN       |        2 |       20 |
+| KRN       |        2 |       20 |
+| JPN       |        2 |       22 |
+| KRN       |        2 |       22 |
+| CHN       |        2 |       23 |
+| CHN       |        1 |       24 |
+| CHN       |        3 |       24 |
+| JPN       |        5 |       24 |
+| JPN       |        5 |       25 |
+| CHN       |        2 |       29 |
+| CHN       |        4 |       29 |
+| JPN       |        1 |       29 |
+| JPN       |        2 |       29 |
+| JPN       |        3 |       29 |
+| JPN       |        4 |       29 |
+| JPN       |        5 |       29 |
+| KRN       |        1 |       29 |
+| KRN       |        2 |       29 |
+| KRN       |        3 |       29 |
+| CHN       |        3 |       30 |
+| CHN       |        3 |       31 |
+| KRN       |        5 |       31 |
+| CHN       |        1 |       34 |
+| JPN       |        1 |       34 |
+| JPN       |        4 |       34 |
+| KRN       |        2 |       34 |
+| KRN       |        3 |       34 |
+| CHN       |        1 |       35 |
+| JPN       |        2 |       35 |
+| KRN       |        1 |       36 |
+| KRN       |        2 |       36 |
+| KRN       |        3 |       36 |
+| KRN       |        4 |       36 |
+| KRN       |        5 |       36 |
++-----------+----------+----------+
