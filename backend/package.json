@@ -1,7 +1,7 @@
 {
-  "name": "nodemysql",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "Sample app for using MySQL with Node",
+  "description": "backend for using MySQL with Node",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
