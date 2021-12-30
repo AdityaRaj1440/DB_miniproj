@@ -90,9 +90,26 @@ CREATE TABLE `comic_genre` (
 
 LOCK TABLES `comic_genre` WRITE;
 /*!40000 ALTER TABLE `comic_genre` DISABLE KEYS */;
-INSERT INTO `comic_genre` VALUES ('CHN',1,1),('CHN',2,1),('CHN',4,1),('JPN',2,1),('JPN',3,1),('JPN',4,1),('KRN',1,1),('KRN',2,1),('KRN',3,1),('KRN',4,1),('CHN',1,2),('CHN',2,2),('CHN',4,2),('JPN',1,2),('JPN',2,2),('JPN',3,2),('JPN',4,2),('JPN',5,2),('KRN',1,2),('KRN',2,2),('KRN',3,2),('KRN',4,2),('KRN',5,2),('JPN',2,3),('JPN',3,3),('JPN',4,3),('CHN',2,4),('CHN',3,4),('JPN',2,4),('JPN',3,4),('JPN',4,4),('JPN',5,4),('KRN',2,4),('KRN',3,4),('KRN',5,4),('JPN',2,6),('JPN',3,6),('JPN',4,6),('CHN',1,7),('CHN',2,7),('JPN',2,7),('JPN',3,7),('JPN',4,7),('KRN',2,7),('KRN',5,7),('CHN',1,9),('CHN',2,9),('CHN',4,9),('JPN',2,9),('JPN',3,9),('JPN',4,9),('JPN',5,9),('KRN',1,9),('KRN',2,9),('KRN',4,9),('KRN',5,9),('CHN',2,11),('JPN',2,13),('JPN',4,13),('CHN',1,16),('CHN',4,16),('JPN',3,16),('JPN',4,16),('KRN',3,16),('KRN',5,16),('JPN',2,17),('JPN',2,20),('KRN',2,20),('JPN',2,22),('KRN',2,22),('CHN',2,23),('CHN',1,24),('CHN',3,24),('JPN',5,24),('JPN',5,25),('CHN',2,29),('CHN',4,29),('JPN',1,29),('JPN',2,29),('JPN',3,29),('JPN',4,29),('JPN',5,29),('KRN',1,29),('KRN',2,29),('KRN',3,29),('CHN',3,30),('CHN',3,31),('KRN',5,31),('CHN',1,34),('JPN',1,34),('JPN',4,34),('KRN',2,34),('KRN',3,34),('CHN',1,35),('JPN',2,35),('KRN',1,36),('KRN',2,36),('KRN',3,36),('KRN',4,36),('KRN',5,36);
+INSERT INTO `comic_genre` VALUES ('CHN',1,1),('CHN',2,1),('CHN',4,1),('JPN',2,1),('JPN',3,1),('JPN',4,1),('JPN',6,1),('JPN',7,1),('JPN',8,1),('JPN',11,1),('JPN',12,1),('JPN',14,1),('JPN',18,1),('JPN',22,1),('JPN',24,1),('KRN',1,1),('KRN',2,1),('KRN',3,1),('KRN',4,1),('CHN',1,2),('CHN',2,2),('CHN',4,2),('JPN',1,2),('JPN',2,2),('JPN',3,2),('JPN',4,2),('JPN',5,2),('JPN',6,2),('JPN',7,2),('JPN',8,2),('JPN',9,2),('JPN',10,2),('JPN',11,2),('JPN',12,2),('JPN',14,2),('JPN',16,2),('JPN',18,2),('JPN',21,2),('JPN',24,2),('JPN',25,2),('KRN',1,2),('KRN',2,2),('KRN',3,2),('KRN',4,2),('KRN',5,2),('JPN',2,3),('JPN',3,3),('JPN',4,3),('JPN',8,3),('JPN',11,3),('JPN',18,3),('CHN',2,4),('CHN',3,4),('JPN',2,4),('JPN',3,4),('JPN',4,4),('JPN',5,4),('JPN',6,4),('JPN',7,4),('JPN',9,4),('JPN',10,4),('JPN',11,4),('JPN',12,4),('JPN',16,4),('JPN',18,4),('JPN',19,4),('JPN',20,4),('JPN',21,4),('JPN',22,4),('JPN',23,4),('JPN',25,4),('KRN',2,4),('KRN',3,4),('KRN',5,4),('JPN',20,5),('JPN',2,6),('JPN',3,6),('JPN',4,6),('JPN',8,6),('JPN',11,6),('JPN',18,6),('CHN',1,7),('CHN',2,7),('JPN',2,7),('JPN',3,7),('JPN',4,7),('JPN',6,7),('JPN',10,7),('JPN',11,7),('JPN',12,7),('JPN',13,7),('JPN',14,7),('JPN',15,7),('JPN',17,7),('JPN',18,7),('JPN',19,7),('JPN',20,7),('JPN',23,7),('JPN',25,7),('KRN',2,7),('KRN',5,7),('JPN',20,8),('JPN',22,8),('CHN',1,9),('CHN',2,9),('CHN',4,9),('JPN',2,9),('JPN',3,9),('JPN',4,9),('JPN',5,9),('JPN',6,9),('JPN',7,9),('JPN',8,9),('JPN',11,9),('JPN',14,9),('JPN',15,9),('JPN',16,9),('JPN',18,9),('JPN',22,9),('JPN',24,9),('KRN',1,9),('KRN',2,9),('KRN',4,9),('KRN',5,9),('CHN',2,11),('JPN',15,11),('JPN',11,12),('JPN',12,12),('JPN',25,12),('JPN',2,13),('JPN',4,13),('JPN',9,13),('JPN',18,13),('JPN',21,13),('JPN',24,13),('JPN',23,15),('CHN',1,16),('CHN',4,16),('JPN',3,16),('JPN',4,16),('KRN',3,16),('KRN',5,16),('JPN',2,17),('JPN',8,17),('JPN',16,17),('JPN',21,17),('JPN',24,17),('JPN',2,20),('JPN',8,20),('JPN',11,20),('JPN',13,20),('JPN',16,20),('JPN',17,20),('JPN',18,20),('JPN',25,20),('KRN',2,20),('JPN',2,22),('JPN',11,22),('JPN',14,22),('JPN',16,22),('JPN',17,22),('JPN',18,22),('KRN',2,22),('CHN',2,23),('JPN',15,23),('JPN',23,23),('CHN',1,24),('CHN',3,24),('JPN',5,24),('JPN',15,24),('JPN',20,24),('JPN',23,24),('JPN',5,25),('JPN',9,25),('JPN',11,25),('JPN',12,25),('JPN',13,25),('JPN',16,25),('JPN',13,26),('JPN',16,26),('JPN',17,26),('JPN',21,26),('JPN',24,26),('CHN',2,29),('CHN',4,29),('JPN',1,29),('JPN',2,29),('JPN',3,29),('JPN',4,29),('JPN',5,29),('JPN',6,29),('JPN',7,29),('JPN',8,29),('JPN',10,29),('JPN',11,29),('JPN',12,29),('JPN',14,29),('JPN',15,29),('JPN',18,29),('JPN',19,29),('JPN',20,29),('JPN',25,29),('KRN',1,29),('KRN',2,29),('KRN',3,29),('CHN',3,30),('CHN',3,31),('JPN',15,31),('JPN',19,31),('JPN',23,31),('KRN',5,31),('JPN',10,33),('JPN',19,33),('CHN',1,34),('JPN',1,34),('JPN',4,34),('JPN',11,34),('JPN',16,34),('JPN',18,34),('JPN',21,34),('JPN',22,34),('JPN',24,34),('JPN',25,34),('KRN',2,34),('KRN',3,34),('CHN',1,35),('JPN',2,35),('JPN',8,35),('JPN',14,35),('JPN',15,35),('JPN',18,35),('JPN',24,35),('KRN',1,36),('KRN',2,36),('KRN',3,36),('KRN',4,36),('KRN',5,36);
 /*!40000 ALTER TABLE `comic_genre` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `comic_result`
+--
+
+DROP TABLE IF EXISTS `comic_result`;
+/*!50001 DROP VIEW IF EXISTS `comic_result`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `comic_result` AS SELECT 
+ 1 AS `Origin_id`,
+ 1 AS `Comic_id`,
+ 1 AS `Name`,
+ 1 AS `Status`,
+ 1 AS `Total_Chapters`,
+ 1 AS `Other_Media`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Temporary view structure for view `comicdifference`
@@ -145,7 +162,7 @@ CREATE TABLE `comics` (
 
 LOCK TABLES `comics` WRITE;
 /*!40000 ALTER TABLE `comics` DISABLE KEYS */;
-INSERT INTO `comics` VALUES ('CHN',1,'Versatile Mage','Ongoing',804,'Y'),('CHN',2,'Tales of Demons and Gods','Ongoing',367,'N'),('CHN',3,'19 Days','Ongoing',377,'N'),('CHN',4,'Journey to the West','Ongoing',114,'N'),('JPN',1,'Jujutsu Kaisen','Ongoing',170,'Y'),('JPN',2,'Attack On Titan','Completed',139,'Y'),('JPN',3,'Naruto','Completed',700,'Y'),('JPN',4,'Bleach','Completed',686,'Y'),('JPN',5,'My Hero Academia','Ongoing',338,'Y'),('KRN',1,'Solo Levelling','Ongoing',178,'N'),('KRN',2,'Tower Of God','Ongoing',523,'Y'),('KRN',3,'The God of High School','Ongoing',526,'Y'),('KRN',4,'Omniscient Reader\'s Viewpoint','Ongoing',86,'N'),('KRN',5,'Peerless Dad','Ongoing',200,'N');
+INSERT INTO `comics` VALUES ('CHN',1,'Versatile Mage','Ongoing',804,'Y'),('CHN',2,'Tales of Demons and Gods','Ongoing',367,'N'),('CHN',3,'19 Days','Ongoing',377,'N'),('CHN',4,'Journey to the West','Ongoing',114,'N'),('JPN',1,'Jujutsu Kaisen','Ongoing',170,'Y'),('JPN',2,'Attack On Titan','Completed',139,'Y'),('JPN',3,'Naruto','Completed',700,'Y'),('JPN',4,'Bleach','Completed',686,'Y'),('JPN',5,'My Hero Academia','Ongoing',338,'Y'),('JPN',6,'One Piece','Ongoing',1035,'Y'),('JPN',7,'Fairy Tail','Completed',545,'Y'),('JPN',8,'Claymore','Completed',155,'Y'),('JPN',9,'Kaiju No. 8','Ongoing',53,'N'),('JPN',10,'Hajime No Ippo','Ongoing',1365,'Y'),('JPN',11,'Fullmetal Alchemist','Completed',108,'Y'),('JPN',12,'Gintama','Ongoing',704,'Y'),('JPN',13,'Steins:Gate','Completed',18,'Y'),('JPN',14,'Hunter X Hunter','Hiatus',390,'Y'),('JPN',15,'Clannad','Completed',45,'Y'),('JPN',16,'One Punch Man','Ongoing',152,'Y'),('JPN',17,'Monster','Completed',156,'Y'),('JPN',18,'Death Note','Completed',112,'Y'),('JPN',19,'Haikyuu!!','Ongoing',402,'Y'),('JPN',20,'Shokugeki no Souma','Completed',315,'Y'),('JPN',21,'Hellsing','Completed',95,'Y'),('JPN',22,'No Game No Life','Ongoing',12,'Y'),('JPN',23,'Nodame Cantabile','Completed',136,'Y'),('JPN',24,'Berserk','Abandoned',349,'Y'),('JPN',25,'Kuroshitshuji','Ongoing',182,'Y'),('KRN',1,'Solo Levelling','Ongoing',178,'N'),('KRN',2,'Tower Of God','Ongoing',523,'Y'),('KRN',3,'The God of High School','Ongoing',526,'Y'),('KRN',4,'Omniscient Reader\'s Viewpoint','Ongoing',86,'N'),('KRN',5,'Peerless Dad','Ongoing',200,'N');
 /*!40000 ALTER TABLE `comics` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -305,6 +322,25 @@ INSERT INTO `novel_genre` VALUES (1,1),(2,1),(7,1),(9,1),(22,1),(1,2),(9,2),(9,3
 UNLOCK TABLES;
 
 --
+-- Temporary view structure for view `novel_result`
+--
+
+DROP TABLE IF EXISTS `novel_result`;
+/*!50001 DROP VIEW IF EXISTS `novel_result`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `novel_result` AS SELECT 
+ 1 AS `Book_id`,
+ 1 AS `Name`,
+ 1 AS `Status`,
+ 1 AS `Origin`,
+ 1 AS `Total_Chapters`,
+ 1 AS `Release_Date`,
+ 1 AS `Last_Updated`,
+ 1 AS `Author_Name`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `novels`
 --
 
@@ -420,12 +456,30 @@ UNLOCK TABLES;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = cp850 */;
-/*!50001 SET character_set_results     = cp850 */;
-/*!50001 SET collation_connection      = cp850_general_ci */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `bookgenre` AS select `distinctbook`.`Book_id` AS `Book_id`,`selectedgenre`.`Genre_id` AS `Genre_id` from (`distinctbook` join `selectedgenre`) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `comic_result`
+--
+
+/*!50001 DROP VIEW IF EXISTS `comic_result`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `comic_result` AS select `comics`.`Origin_id` AS `Origin_id`,`comics`.`Comic_id` AS `Comic_id`,`comics`.`Name` AS `Name`,`comics`.`Status` AS `Status`,`comics`.`Total_Chapters` AS `Total_Chapters`,`comics`.`Other_Media` AS `Other_Media` from `comics` where (`comics`.`Origin_id`,`comics`.`Comic_id`) in (select `comicresult`.`Origin_id`,`comicresult`.`Comic_id` from `comicresult`) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -438,9 +492,9 @@ UNLOCK TABLES;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = cp850 */;
-/*!50001 SET character_set_results     = cp850 */;
-/*!50001 SET collation_connection      = cp850_general_ci */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `comicdifference` AS select `mangagenre`.`Origin_id` AS `Origin_id`,`mangagenre`.`Comic_id` AS `Comic_id`,`mangagenre`.`Genre_id` AS `Genre_id` from `mangagenre` where (`mangagenre`.`Origin_id`,`mangagenre`.`Comic_id`,`mangagenre`.`Genre_id`) in (select `comic_genre`.`Origin_id`,`comic_genre`.`Comic_id`,`comic_genre`.`Genre_id` from `comic_genre`) is false */;
@@ -456,9 +510,9 @@ UNLOCK TABLES;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = cp850 */;
-/*!50001 SET character_set_results     = cp850 */;
-/*!50001 SET collation_connection      = cp850_general_ci */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `comicresult` AS select distinct `comic_genre`.`Origin_id` AS `Origin_id`,`comic_genre`.`Comic_id` AS `Comic_id` from `comic_genre` where (`comic_genre`.`Origin_id`,`comic_genre`.`Comic_id`) in (select `comicdifference`.`Origin_id`,`comicdifference`.`Comic_id` from `comicdifference`) is false */;
@@ -528,9 +582,9 @@ UNLOCK TABLES;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = cp850 */;
-/*!50001 SET character_set_results     = cp850 */;
-/*!50001 SET collation_connection      = cp850_general_ci */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `difference` AS select `bookgenre`.`Book_id` AS `Book_id`,`bookgenre`.`Genre_id` AS `Genre_id` from `bookgenre` where (`bookgenre`.`Book_id`,`bookgenre`.`Genre_id`) in (select `novel_genre`.`Book_id`,`novel_genre`.`Genre_id` from `novel_genre`) is false */;
@@ -546,9 +600,9 @@ UNLOCK TABLES;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = cp850 */;
-/*!50001 SET character_set_results     = cp850 */;
-/*!50001 SET collation_connection      = cp850_general_ci */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `distinctbook` AS select distinct `novel_genre`.`Book_id` AS `Book_id` from `novel_genre` */;
@@ -564,12 +618,12 @@ UNLOCK TABLES;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = cp850 */;
-/*!50001 SET character_set_results     = cp850 */;
-/*!50001 SET collation_connection      = cp850_general_ci */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `distinctcomic` AS select distinct `comic_genre`.`Origin_id` AS `Origin_id`,`comic_genre`.`Comic_id` AS `Comic_id` from `comic_genre` */;
+/*!50001 VIEW `distinctcomic` AS select distinct `comics`.`Origin_id` AS `Origin_id`,`comics`.`Comic_id` AS `Comic_id` from `comics` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -582,9 +636,9 @@ UNLOCK TABLES;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = cp850 */;
-/*!50001 SET character_set_results     = cp850 */;
-/*!50001 SET collation_connection      = cp850_general_ci */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `mangagenre` AS select `distinctcomic`.`Origin_id` AS `Origin_id`,`distinctcomic`.`Comic_id` AS `Comic_id`,`selectedgenre`.`Genre_id` AS `Genre_id` from (`distinctcomic` join `selectedgenre`) */;
@@ -606,6 +660,24 @@ UNLOCK TABLES;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `novel` AS select `novel_genre`.`Genre_id` AS `Genre_id`,`novel_genre`.`Book_id` AS `Book_id` from `novel_genre` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `novel_result`
+--
+
+/*!50001 DROP VIEW IF EXISTS `novel_result`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `novel_result` AS select `novels`.`Book_id` AS `Book_id`,`novels`.`Name` AS `Name`,`novels`.`Status` AS `Status`,`novels`.`Origin` AS `Origin`,`novels`.`Total_Chapters` AS `Total_Chapters`,`novels`.`Release_Date` AS `Release_Date`,`novels`.`Last_Updated` AS `Last_Updated`,`novels`.`Author_Name` AS `Author_Name` from `novels` where `novels`.`Book_id` in (select `result`.`Book_id` from `result`) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -636,12 +708,12 @@ UNLOCK TABLES;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = cp850 */;
-/*!50001 SET character_set_results     = cp850 */;
-/*!50001 SET collation_connection      = cp850_general_ci */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `result` AS select `novels`.`Book_id` AS `Book_id` from `novels` where (`novels`.`Total_Chapters` > 500) */;
+/*!50001 VIEW `result` AS select distinct `novel_genre`.`Book_id` AS `Book_id` from `novel_genre` where `novel_genre`.`Book_id` in (select `difference`.`Book_id` from `difference`) is false */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -654,12 +726,12 @@ UNLOCK TABLES;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = cp850 */;
-/*!50001 SET character_set_results     = cp850 */;
-/*!50001 SET collation_connection      = cp850_general_ci */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `selectedgenre` AS select `genre`.`Genre_id` AS `Genre_id` from `genre` where (`genre`.`Name` in ('Romance','Drama')) */;
+/*!50001 VIEW `selectedgenre` AS select `genre`.`Genre_id` AS `Genre_id` from `genre` where (`genre`.`Name` in ('Tragedy','Fantasy')) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -673,4 +745,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-28 21:46:06
+-- Dump completed on 2021-12-31  0:30:36
