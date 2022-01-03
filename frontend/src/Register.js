@@ -1,7 +1,36 @@
-import React from 'react'
-import { Link } from "react-router-dom"
+import React, { useState } from 'react'
+import { Link ,useNavigate} from "react-router-dom"
+import axios from 'axios'
+import loadUser from  './App';
+
 
 const Register = () => {
+
+    const navigate = useNavigate()
+   
+    const [email,setEmail]=useState('')
+    const [username,setUsername]=useState('')
+    const [password,setPassword]=useState('')
+    
+
+    const onSubmitChange = (e) => {
+        e.preventDefault()
+        const cred = {
+            email: email,
+            name : username,
+            password:password
+        }
+        axios.post('http://localhost:8000/register',cred)
+        .then(user=>{
+            console.log(user)
+            if(user){
+
+                loadUser(user)
+                navigate('/signin')
+            }
+        })
+        .catch(err => console.log(err))
+    }
 
     return (
         <div>
@@ -18,21 +47,30 @@ const Register = () => {
                     </nav>
                 </header> 
                 <h1>Register User </h1>
+
+                <form onSubmit={onSubmitChange}>
                 <div>
-                <input type="name" placeholder='name'/>
+                    <input type="username"
+                     placeholder='username'
+                     onChange={(e)=>setUsername(e.target.value)} />
                 </div>
                 <div>
-                    <input type="username" placeholder='username'/>
+                    <input type="email" 
+                    placeholder='email'
+                    onChange={(e)=>setEmail(e.target.value)} />
                 </div>
                 <div>
-                    <input type="password" placeholder='password'/>
+                    <input type="password" 
+                    placeholder='password'
+                    onChange={(e)=>setPassword(e.target.value)} />
                 </div>
                 <div>
-                <button onClick={() => window.location.href='/signin'} > Register</button>
+                <input type="submit" value="Register"/>
                 </div>
+                </form>
         </div>
     )
   
 }
 
-export default Register;
+export default Register
