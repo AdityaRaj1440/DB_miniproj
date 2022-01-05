@@ -32,6 +32,29 @@ app.get('/showComics', (req, res) => {
   })
 });
 
+//specific comics
+app.get('/showComics/:cid' ,(req,res) => {
+    const {cid} = req.params
+    // const {oid} = req.params
+    let sql= `select C.name, G.name as Genre from Comics C, Comic_Genre CG, Genre G where  (C.Comic_id,C.Origin_id)= (CG.Comic_id, CG.Origin_id) and CG.Genre_id= G.Genre_id and C.Comic_id= ${cid} and C.origin_id='JPN' `
+    db.query(sql, (err,result) => {
+        if(err) throw err;
+        let str= ""
+        for(let i=0; i<result.length; i+=1)
+        {
+            if(str==='')
+              str= result[i].Genre
+            else
+              str+=", "+result[i].Genre
+        }       
+        let json= [{name: result[0].name, Genre: str}]
+        //res.send(result);
+        res.send(json)
+        console.log('Specified comics Displayed...');
+    });
+})
+
+
 //To Show all Novels
 app.get('/showNovels', (req,res) => {
     let sql= 'select * from NOVELS';
