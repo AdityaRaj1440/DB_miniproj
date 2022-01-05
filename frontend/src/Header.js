@@ -1,5 +1,23 @@
+import React, { useState } from 'react'
+import axios from 'axios'
 
 const Header = () => {
+
+    const [movid,setmovid]=useState('')
+    const [flag,setFlag]=useState(false)
+    const [result,setResult]=useState({})
+
+    const onSubmitChange = (e) => {
+        e.preventDefault()
+        axios.get(`http://localhost:8000/comics/${movid}`)
+        .then(res=>{
+            console.log(res.data)
+            setResult(res.data)
+            setFlag(true)
+        })
+        .catch(err => console.log(err))
+    }
+       
     return(
         <div>
             <header className='header'>
@@ -18,64 +36,74 @@ const Header = () => {
                 
 
 
-            <div style={{width:'180px'}}  className="w3-sidebar w3-light-grey w3-bar-block " >
+            <div  className="w3-sidebar sidenav w3-light-grey w3-bar-block " >
                 
-                <h3 class="w3-bar-item" >Menu</h3>
-                <a href="/" class="w3-bar-item w3-button">Link 1</a>
-                <a href="/" class="w3-bar-item w3-button">Link 2</a>
-                <a href="/" class="w3-bar-item w3-button">Link 3</a>
-                <a href="/" class="w3-bar-item w3-button">Link 4</a>
-                <a href="/" class="w3-bar-item w3-button">Link 5</a>
-                <a href="/" class="w3-bar-item w3-button">Link 6</a>
-                <a href="/" class="w3-bar-item w3-button">Link 7</a>
-                <div class="w3-dropdown-hover">
-                    <button class="w3-button">Dropdown <i class="fa fa-caret-down"></i></button>
-                    <div class="w3-dropdown-content w3-bar-block">
-                        <a href="/" class="w3-bar-item w3-button">Link</a>
-                        <a href="/" class="w3-bar-item w3-button">Link</a>
+                <h3 className="w3-bar-item " >Menu</h3>
+                <a href="/" className="w3-bar-item w3-button active">Home</a>
+                <a href="/" className="w3-bar-item w3-button">Comics</a>
+                <a href="/" className="w3-bar-item w3-button">Link 3</a>
+                <a href="/" className="w3-bar-item w3-button">Link 4</a>
+                <a href="/" className="w3-bar-item w3-button">Link 5</a>
+                <a href="/" className="w3-bar-item w3-button">Link 6</a>
+                <a href="/" className="w3-bar-item w3-button">Link 7</a>
+                <div className="w3-dropdown-hover">
+                    <button className="w3-button">Dropdown <i className="fa fa-caret-down"></i></button>
+                    <div className="w3-dropdown-content w3-bar-block">
+                        <a href="/" className="w3-bar-item w3-button">Link</a>
+                        <a href="/" className="w3-bar-item w3-button">Link</a>
                     </div>
                 </div>
             </div>
     
             <div>
-                <div class="w3-container" style={{marginLeft:'14rem'}}>
+                <div className="w3-container content" style={{marginLeft:'14rem'}}>
                     <h2>Form</h2>
-                    <p>Nam consectetur, mauris non bibendum efficitur, purus mauris elementum purus, ut placerat nibh massa vitae ligula. Suspendisse potenti. Donec a ultrices metus.</p>
                     <p>Curabitur eu leo volutpat, elementum nibh id, faucibus diam. Sed quis sapien sapien. Quisque scelerisque sollicitudin est et mollis. Cras eget finibus nunc.</p>
-                <form class=" w3-margin pa1">
-                Variables
-                <div>
-                    <label className="ma3">label1</label>
-                    <input type="name"
-                     placeholder=''
-                    />
-                </div>
-                Path Params
-                <div>
-                <label className="ma3" >label2</label>
-                    <input type="name" 
-                    placeholder=''
-                     />
-                </div>
-                Query String
-                <div>
-                <label className="ma3">label3</label>
-                    <input type="name" 
-                    placeholder=''
-                    />
-                </div>
-                <div class="w3-margin">
-                {/* <input className="pa2 w3-margin" type="submit" value="Send"/>
-                 */}
-                 <button type="submit" className="btn-  pa3 w3-round-xlarge " style={{width:'80px'}}>Send</button>
-                </div>        
-            </form>    
-                </div>
-            </div>
 
+                    <form className=" w3-margin pa1" onSubmit={onSubmitChange}>
+                        Variables
+                        <div>
+                            <label className="ma3">API KEY</label>
+                            <input type="name"
+                            placeholder='api key'
+                            />
+                        </div>
+                        Path Params
+                        <div>
+                        <label className="ma3" >MOVIE_ID</label>
+                            <input type="name" 
+                            placeholder='movie id'
+                            onChange={(e)=>setmovid(e.target.value)}
+                            />
+                        </div>
+                        Query String
+                        <div>
+                            <label className="ma3">label3</label>
+                                <input type="name" 
+                                placeholder=''
+                                />
+                        </div>
+                        <div className="w3-margin">
+                            <button type="submit" className="btn-  pa3 w3-round-xlarge " style={{width:'80px'}}>Send</button>
+                        </div>        
+                    </form>    
+                </div>
+                
+                <div style={{marginLeft: '200px'}} >
+                    {
+                        flag ? <div>
+                        <div className='mb3 b'> Name : {result.name} <br/><br/> Genre : {result.genre} </div> <hr />
+                        <a href={`http://localhost:8000/comics/${movid}`} className='b pa1'>http://localhost:8000/comics/${movid}</a>
+                            </div>
+                         : <></>
+                    }
+                </div>
+                
+            </div>
+                
         </div>
     )
 }
-
+             
 
 export default Header

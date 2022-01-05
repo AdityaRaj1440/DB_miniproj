@@ -1,37 +1,41 @@
 
 .header{
   display: flex;
+  margin-left: 180px;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(179, 220, 226);
 }
 
-.sidenav2 {
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
 .box {
   flex-wrap: wrap;
   align-items: center;
   margin-left: 6rem;
 } 
-
+.sidenav {
+  height: 100%;
+  width: 180px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(226, 220, 220);
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.sidenav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
 
 .sidebar {
   margin: 0;
   padding: 0;
   width: 200px;
   background-color: #f1f1f1;
-  position: fixed;
+  position: absolute;
   height: 100%;
-  overflow: auto;
+  overflow-x: hidden;
 }
 
 .sidebar a {
