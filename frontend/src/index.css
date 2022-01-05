@@ -21,7 +21,7 @@
   left: 0;
   background-color: rgb(226, 220, 220);
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-top: 60px;
 }
 .sidenav a.active {
   background-color: #04AA6D;
@@ -54,9 +54,17 @@
   background-color: #555;
   color: white;
 }
+.boundary{
+  border : 1px solid black;
+  margin:30px auto;
+  padding: 30px 16px;
+  border-radius: 5px;
+  margin-right: 30px;
+}
+
 
 div.content {
-  margin-left: 200px;
+  /* margin:200px; */
   padding: 1px 16px;
   height: 1000px;
 }

@@ -1,18 +1,15 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Link ,useNavigate} from "react-router-dom"
 
-const Header = () => {
-    
-    const navigate = useNavigate()
-    const [Comic_id,setComic_id]=useState('')
-    // const [Origin_id,setOrigin_id]=useState('')
+function Novels() {
+
+    const [Book_id,setBook_id]=useState('')
     const [flag,setFlag]=useState(false)
     const [result,setResult]=useState({})
 
     const onSubmitChange = (e) => {
         e.preventDefault()
-        axios.get(`http://localhost:8000/showComics/${Comic_id}`)
+        axios.get(`http://localhost:8000/showNovels/${Book_id}`)
         .then(res=>{
             console.log(res.data)
             setResult(res.data)
@@ -42,8 +39,8 @@ const Header = () => {
             <div  className="w3-sidebar sidenav w3-light-grey w3-bar-block " >
                 
                 <h3 className="w3-bar-item " >Menu</h3>
-                <a href="/" className="w3-bar-item w3-button active">Home</a>
-                <a href="/" className="w3-bar-item w3-button" onClick={ () => navigate('./Novels') }>Novels</a>
+                <a href="/" className="w3-bar-item w3-button ">Home</a>
+                <a href="/" className="w3-bar-item w3-button active">Novels</a>
                 <a href="/" className="w3-bar-item w3-button">Genres</a>
                 <a href="/" className="w3-bar-item w3-button">Link 4</a>
                 <a href="/" className="w3-bar-item w3-button">Link 5</a>
@@ -61,7 +58,7 @@ const Header = () => {
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
                     <h2>Form</h2>
-                    <p><b> GET  /comic/comic_id</b><br />Get the primary information about a movie.</p>
+                    <p>Curabitur eu leo volutpat, elementum nibh id, faucibus diam. Sed quis sapien sapien. Quisque scelerisque sollicitudin est et mollis. Cras eget finibus nunc.</p>
 
                     <form className=" w3-margin pa1 " onSubmit={onSubmitChange}>
                         Variables
@@ -72,16 +69,11 @@ const Header = () => {
                             />
                         </div>
                         Path Params
-                        <div className='flexbox'>
-                        <label className="ma3 " >Comic_ID</label>
+                        <div>
+                        <label className="ma3 " >Book_id</label>
                             <input type="name"  
-                            placeholder='comic id'
-                            onChange={(e)=>setComic_id(e.target.value)}
-                            />
-                        <label className="ma3 " >Origin_ID</label>
-                            <input type="name"  
-                            placeholder='origin id'
-                            // onChange={(e)=>setOrigin_id(e.target.value)}
+                            placeholder='book id'
+                            onChange={(e)=>setBook_id(e.target.value)}
                             />
                         </div>
                         Query String
@@ -98,21 +90,16 @@ const Header = () => {
                 <div style={{marginLeft: '10px'}} >
                     {
                         flag ? <div className='boundary'>
-                            {console.log("Result: ",result)}
-                        <div className='mb3 b'> Name : {result[0].name} <br/><br/> Genre : {result[0].Genre} </div> <hr />
-                        <a href={`http://localhost:8000/showComics/${Comic_id}`} className='b i pa1'>http://localhost:8000/showComics/${Comic_id}</a>
+                        <div className='mb3 b'> Name : {result.name} <br/><br/> Genre : {result.genre} </div> <hr />
+                        <a href={`http://localhost:8000/showNovels/${Book_id}`} className='b i pa1'>http://localhost:8000/showNovels/${Book_id}</a>
                             </div>
                          : <></>
                     }
                 </div>
                 </div>
-                
-                
             </div>
-                
         </div>
     )
-}
-             
-
-export default Header
+  }
+  
+  export default Novels;
