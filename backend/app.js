@@ -27,7 +27,7 @@ app.get('/showComics', (req, res) => {
             alter view Comic_Result as select * from Comics`;
   db.query(sql, (err,result) => {
       if(err) throw err;
-      res.send(result);
+      res.send(result[0]);
       console.log('All Comics Displayed');
   })
 });
@@ -110,6 +110,7 @@ app.get('/filterNovelByOrigin', (req,res) => {
     });
 });
 
+//alphabetical sorting descending
 app.get('/sortComicByAlphabeticalDesc', (req, res) => {
     let sql= 'Select * from Comic_Result order by name desc';
     db.query(sql, (err, result) =>{
@@ -119,6 +120,7 @@ app.get('/sortComicByAlphabeticalDesc', (req, res) => {
     });
 });
 
+//alphabetical sorting ascending
 app.get('/sortComicByAlphabeticalAsc', (req,res) => {
     let sql= 'Select * from Comic_Result order by name asc';
     db.query(sql, (err, result) => {
@@ -128,6 +130,8 @@ app.get('/sortComicByAlphabeticalAsc', (req,res) => {
     });
 });
 
+
+//viewing only completed comics
 app.get('/showCompletedComics', (req,res) => {
     let sql= 'Select * from Comic_Result where status = "Completed"';
     db.query(sql, (err, result) => {
@@ -135,6 +139,37 @@ app.get('/showCompletedComics', (req,res) => {
         res.send(result);
         console.log('Comics filtered')
     });
+})
+
+
+//to show all adaptations
+app.get('/showAdaptations',(req,res) => {
+    let sql= 'Select * from Adaptations'
+    db.query(sql, (err, result) => {
+        if(err) throw err;
+        res.send(result);
+        console.log('Adaptations shown')
+    });
+});
+
+//to show only Anime
+app.get('/showAnime', (req,res) => {
+    let sql= 'Select * from Adaptations where type= "ANI"'
+    db.query(sql, (err, result) => {
+        if(err) throw err;
+        res.send(result);
+        console.log('Anime shown');
+    })
+})
+
+//to show live adaptation
+app.get('/showLive', (req,res) => {
+    let sql= 'Select * from Adaptations where type= "LIV"'
+    db.query(sql, (err, result) => {
+        if(err) throw err;
+        res.send(result);
+        console.log('Live Adaptations shown');
+    })
 })
 
 app.listen('3000', () => {
