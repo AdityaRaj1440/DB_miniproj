@@ -1,7 +1,28 @@
-import React from 'react'
-import { Link } from "react-router-dom"
+import { Link , useNavigate} from "react-router-dom"
+import React, { useState } from 'react'
+import axios from 'axios'
 
 const Signin = () => {
+
+    const navigate = useNavigate()
+    
+    const [username,setUsername]=useState('')
+    const [password,setPassword]=useState('')
+  
+    const onSubmitChange = (e) => {
+        e.preventDefault()
+        const cred = {
+            name : username,
+            password:password
+        }
+        axios.post('http://localhost:8000/signin',cred)
+        .then(res=>{
+            console.log(res)
+            navigate('/')
+        })
+        .catch(err => console.log(err))
+       
+    }
     return (
         <div>
             <header className='header'>
@@ -17,17 +38,24 @@ const Signin = () => {
                     </nav>
             </header> 
             <h1>Sign in User</h1>
+
+            <form onSubmit={onSubmitChange}>
             <div>
-                <input type="username" placeholder='username'/>
+                <input type="username" 
+                placeholder='username'
+                onChange={(e)=>setUsername(e.target.value)}
+                />
             </div>
             <div>
-                <input type="password" placeholder='password'/>
+                <input type="password"
+                placeholder='password'
+                onChange={(e)=>setPassword(e.target.value)}
+                />
             </div>
             <div>
-                {/* <Link to='/' className='btn btn-primary'>Sign in</Link> */}
-            <button onClick={() => window.location.href='/'}> Sign in</button>
+                <input type="submit" value="Sign In"/>
             </div>
-            
+            </form>
         </div>
 
     )

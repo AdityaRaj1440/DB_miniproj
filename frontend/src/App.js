@@ -1,34 +1,24 @@
-import Header  from "./Header";
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
-import Signin from './Signin'
-import Register from './Register'
-import Anime from './Anime'
-import Comic from './Comic'
-import Community from './Community'
-import Music from './Music'
-import Wallpapers from './Wallpapers'
-import Novel from './Novel'
+
+import React from "react";
+import Header from './Header';
+import Sidebar2 from "./Sidebar2";
+import {useEffect} from 'react'
+import axios from 'axios'
 
 
-function App() {
-  return (
-      <Router>
+const App = () => {
+
+  useEffect(()=>{
+    axios.get("http://localhost:8000/")
+    .then(res=>console.log(res.data))
+    .catch(err=>console.log(err))
+  },[])
+
+   return (
         <div >
-              <Routes>
-                <Route path='/' element={<Header/>}  />
-                <Route path="/signin" element={<Signin />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/anime" element={<Anime />} />
-                <Route path="/comic" element={<Comic />} />
-                <Route path="/community" element={<Community />} />
-                <Route path="/music" element={<Music />} />
-                <Route path="/novel" element={<Novel />} />
-                <Route path="/wallpapers" element={<Wallpapers />} />
-             </Routes>
+            <Header />
+            {/* <Sidebar2 /> */}
         </div>
-      </Router>
-
-
   );
 }
 
