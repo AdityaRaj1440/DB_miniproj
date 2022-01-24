@@ -5,13 +5,13 @@ app.use(express.json())
 app.use('/showGenre', require('./Routes/genre'))
 
 
-app.use('/showNovels', require('./Routes/novels'))
+app.use('/Novels', require('./Routes/novels'))
 
-app.use('/showComics', require('./Routes/comics'))
+app.use('/Comics', require('./Routes/comics'))
 
 app.use('/sort', require('./Routes/sort'))
 
-app.use('/showAdaptations', require('./Routes/adaptations'))
+app.use('/Adaptations', require('./Routes/adaptations'))
 //create connection
 // const db= mysql.createConnection({
 //     host : 'localhost',

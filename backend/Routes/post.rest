@@ -1,0 +1,17 @@
+POST http://localhost:3000/Novels/insertNovel HTTP/1.1
+content-type: application/json
+
+{
+    "Book_id": 6,
+    "Name": "Martial Peak",
+    "Status": "Ongoing",
+    "Origin": "Chinese",
+    "Total_Chapter": 2747,
+    "Release_Date": 2013,
+    "Last_Updated": "2022-01-23",
+    "Author_Name": "Momo",
+    "Url": "https://boxnovel.com/novel/martial-peak/",
+    "Image": "https://boxnovel.com/wp-content/uploads/2018/12/martial-peak-193x278.jpg",
+    "Synopsis": "The journey to the martial peak is a lonely, solitary and long one. In the face of adversity, you must survive and remain unyielding. Only then can you break through and continue on your journey to become the strongest. High Heaven Pavilion tests its disciples in the harshest ways to prepare them for this journey. One day the lowly sweeper Kai Yang managed to obtain a black book, setting him on the road to the peak of the martials world.",
+    "Genres": [2,11,16,17]
+}

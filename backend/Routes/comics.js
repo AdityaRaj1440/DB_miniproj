@@ -1,22 +1,16 @@
 const router= require('express').Router()
 const db= require('./database')
 const merge= require('../functions/GenreMerge')
+const mutate= require('../functions/MutateJson')
 
 router.get('/', (req, res) => {
-    let sql=  `select *, G.Name as Genres from Comics C inner join Comic_Genre CG on C.Comic_id= CG.Comic_id and C.Origin_id= CG.Origin_id
-               inner join Genre G on CG.Genre_id= G.Genre_id`
+    let sql=  `select *, C.Name as Name, G.Name as Genres from Comics C inner join Comic_Genre CG on C.Comic_id= CG.Comic_id and C.Origin_id= CG.Origin_id
+    inner join Genre G on CG.Genre_id= G.Genre_id`
     db.query(sql, (err, result) => {
         if(err)
         res.status(400).end('No comics found!!')
-        
-        let json =  result[0];
-        let genre= []
-        for(let i=0; i<result.length; i++)
-        {
-            genre.push(result[i].Genres)
-        }
-        json.Genres= genre.join(',')
-        res.json(json)
+        //console.log(result.length)
+        res.json(mutate(result))
     })
 })
 
@@ -26,14 +20,6 @@ router.use('/name/:name', (req, res) => {
     db.query(sql, (err, result) => {
         if(err)
         res.status(400).end('No match for the given name')
-        // let json =  result[0];
-        // const genre= []
-        // for(let i=0; i<result.length; i++)
-        // {
-        //     genre.push(result[i].Genres)
-        // }
-        // delete json.Genre_id
-        // json.Genres= genre.join(',')
         res.json(merge(result))
     })
 })
@@ -44,25 +30,37 @@ router.get('/id/:origin/:id', (req, res) => {
     db.query(sql, (err, result) => {
         if(err)
         res.status(400).end('No match for the given id')
-        // let json =  result[0];
-        // const genre= []
-        // for(let i=0; i<result.length; i++)
-        // {
-        //     genre.push(result[i].Genres)
-        // }
-        // delete json.Genre_id
-        // json.Genres= genre.join(',')
         res.json(merge(result))
     })
 })
 
 router.get('/origin/:origin', (req, res) => {
-    let sql= `select * from Comics where Origin_id= '${req.params.origin}' `
+    let sql= `select *, C.Name as Name, G.Name as Genres from Comics C inner join Comic_Genre CG on C.Comic_id= CG.Comic_id and 
+    C.Origin_id= CG.Origin_id inner join Genre G on CG.Genre_id= G.Genre_id and C.Origin_id= "${req.params.origin}" 
+    order by C.Origin_id, C.Comic_id`
+    //console.log(sql);
     db.query(sql, (err, result) => {
         if(err)
         res.status(400).end(`No ${req.params.origin} comic found`)
-        res.json(result)
+        res.json(mutate(result))
     })
+})
+
+router.post('/insertComic', (req, res) => {
+    
+    const json= req.body
+    const genre= json.Genres
+    let sql= `insert into Comics values ("${json.Origin_id}",${json.Comic_id},"${json.Name}","${json.Status}",${json.Total_Chapter},"${json.Other_Media}","${json.Url}","${json.Image}","${json.Synopsis}");`
+    for(let i=0; i<genre.length; i++)
+    {
+        sql+=`insert into Comic_Genre values ("${json.Origin_id}",${json.Comic_id},${genre[i]});`
+    }
+    console.log(sql);
+    db.query(sql, (err, result) => {
+        if(err)
+        res.status(400).end("Primary key or reference integrity violated")
+        res.send('record inserted successfully')
+    }) 
 })
 
 module.exports= router
