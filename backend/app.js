@@ -12,6 +12,8 @@ app.use('/Comics', require('./Routes/comics'))
 app.use('/sort', require('./Routes/sort'))
 
 app.use('/Adaptations', require('./Routes/adaptations'))
+
+app.use('/Anime', require('./Routes/anime'))
 //create connection
 // const db= mysql.createConnection({
 //     host : 'localhost',

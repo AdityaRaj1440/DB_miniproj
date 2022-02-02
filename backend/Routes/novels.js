@@ -37,7 +37,7 @@ router.get('/id/:id', (req, res) => {
 
 router.get('/origin/:origin', (req, res) => {
     let sql= `select *, N.Name as Name, G.Name as Genres from Novels N inner join Novel_Genre NG on N.Book_id= NG.Book_id
-    inner join Genre G on NG.Genre_id= G.Genre_id where Origin= '${req.params.origin}' order by N.Book_id`
+    inner join Genre G on NG.Genre_id= G.Genre_id where N.Origin= '${req.params.origin}' order by N.Book_id`
     console.log(sql);
     db.query(sql, (err, result) => {
         if(err)
@@ -45,6 +45,7 @@ router.get('/origin/:origin', (req, res) => {
         res.json(mutate(result))
     })
 })
+
 
 router.post('/insertNovel', (req, res) => {
     
