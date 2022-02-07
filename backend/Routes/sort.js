@@ -19,4 +19,12 @@ router.get('/adaptations/rating/:order', (req,res) => {
     })
 })
 
+router.get('/:type/totalChapters/:order', (req, res) => {
+    let sql= `select * from ${req.params.type} order by Total_Chapters ${req.params.order}`;
+    db.query(sql, (err, result) => {
+        if(err)
+        res.status(400).end('Some issue occured');
+        res.json(result)
+})
+})
 module.exports= router

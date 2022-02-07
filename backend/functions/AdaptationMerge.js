@@ -3,7 +3,7 @@ const merge= require('./GenreMerge')
 const mutate= (result) => {
    
     let json= [result[0]]
-    console.log(result)
+    //console.log(result)
     //console.log("Name is ",result[0].Name);
     let finResult= []
     for(let i=1; i<result.length; i++)

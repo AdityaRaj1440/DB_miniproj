@@ -30,6 +30,7 @@ router.get('/name/exact/:name', (req, res) => {
     db.query(sql, (err, result) => {
         if(err)
         res.status(400).end('No match found')
+        console.log("Result is:", mutate(result))
         res.json(mutate(result))
     })
 })

@@ -1,6 +1,7 @@
 const router= require('express').Router()
-
+const mutate= require('../functions/MutateJson')
 const db= require('./database')
+const mutateAdapt= require('../functions/AdaptationMerge')
 
 router.get('/', (req, res) => {
  let sql= 'Select * from Genre'
@@ -95,5 +96,64 @@ router.get('/filterAnime/*', (req,res) => {
         console.log("Comics fetched");
     });
 });
+
+//To show filtered Live Adaptations
+router.get('/filterLive/*', (req,res) => {
+    let list= req.params[0].split('/')
+    comicQuery= makeQuery(list, comicQuer)
+    let sql= comicQuery+"Select * from Adaptations A, Live LIV, Comic_Result CR where LIV.Type= A.Type and LIV.Adapt_id= A.Adapt_id and A.Comic_id= CR.Comic_id and A.Origin_id= CR.Origin_id";
+    db.query(sql, (err,result) => {
+        if(err) throw err;
+        res.json(result[6]);
+    });
+})
+
+router.get('/comics/filterByStatus/:status', (req, res) => {
+    let sql= `select *, C.Name as Name, G.Name as Genres from Comics C inner join Comic_Genre CG on C.Comic_id= CG.Comic_id and C.Origin_id= CG.Origin_id
+    inner join Genre G on CG.Genre_id= G.Genre_id where status= "${req.params.status}"`
+    db.query(sql, (err,result) => {
+        if(err) throw err;
+        res.json(mutate(result));
+    });
+})
+
+router.get('/novels/filterByStatus/:status', (req, res) => {
+    let sql=  `select *, N.Name as Name, G.Name as Genres from Novels N inner join Novel_Genre NG on N.Book_id= NG.Book_id
+    inner join Genre G on NG.Genre_id= G.Genre_id where status= "${req.params.status}"`
+    db.query(sql, (err,result) => {
+        if(err) throw err;
+        res.json(mutate(result));
+    });
+})
+
+router.get('/anime/filterByRating/:rating', (req, res)=> {
+    let sql=  `select *, A.Name as Name, G.Name as Genres, C.Synopsis from Adaptations A inner join Comic_Genre CG on A.Comic_id= CG.Comic_id and A.Origin_id= CG.Origin_id
+    inner join Genre G on CG.Genre_id= G.Genre_id inner join (Select Origin_id, Comic_id, Synopsis from comics) as C on C.Comic_id= A.Comic_id and C.Origin_id= A.Origin_id
+    inner join Anime ANI on A.Type= ANI.Type and A.Adapt_id= ANI.Adapt_id where rating>${req.params.rating};`
+    db.query(sql, (err,result) => {
+        if(err) throw err;
+        res.json(mutateAdapt(result));
+    });
+})
+
+router.get('/:type/filterByRatingBetween/:lrate/:urate', (req, res)=> {
+    let sql=  `select *, A.Name as Name, G.Name as Genres, C.Synopsis from Adaptations A inner join Comic_Genre CG on A.Comic_id= CG.Comic_id and A.Origin_id= CG.Origin_id
+    inner join Genre G on CG.Genre_id= G.Genre_id inner join (Select Origin_id, Comic_id, Synopsis from comics) as C on C.Comic_id= A.Comic_id and C.Origin_id= A.Origin_id
+    inner join ${req.params.type} ANI on A.Type= ANI.Type and A.Adapt_id= ANI.Adapt_id where rating between ${req.params.lrate} and ${req.params.urate};`
+    db.query(sql, (err,result) => {
+        if(err) throw err;
+        res.json(mutateAdapt(result));
+    });
+})
+
+router.get('/live/filterByRating/:rating', (req, res)=> {
+    let sql=  `select *, A.Name as Name, G.Name as Genres, C.Synopsis from Adaptations A inner join Comic_Genre CG on A.Comic_id= CG.Comic_id and A.Origin_id= CG.Origin_id
+    inner join Genre G on CG.Genre_id= G.Genre_id inner join (Select Origin_id, Comic_id, Synopsis from comics) as C on C.Comic_id= A.Comic_id and C.Origin_id= A.Origin_id
+    inner join live ANI on A.Type= ANI.Type and A.Adapt_id= ANI.Adapt_id where rating>${req.params.rating};`
+    db.query(sql, (err,result) => {
+        if(err) throw err;
+        res.json(mutateAdapt(result));
+    });
+})
 
 module.exports= router
