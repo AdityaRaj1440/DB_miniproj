@@ -20,7 +20,7 @@ const Register = () => {
             name : username,
             password:password
         }
-        axios.post('http://localhost:8000/register',cred)
+        axios.post('http://localhost:3000/register',cred)
         .then(user=>{
             console.log(user)
             if(user){

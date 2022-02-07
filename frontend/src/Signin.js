@@ -15,7 +15,7 @@ const Signin = () => {
             name : username,
             password:password
         }
-        axios.post('http://localhost:8000/signin',cred)
+        axios.post('http://localhost:3000/signin',cred)
         .then(res=>{
             console.log(res)
             navigate('/')
