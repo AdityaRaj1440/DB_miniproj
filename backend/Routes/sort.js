@@ -10,6 +10,13 @@ router.get('/:type/alphabetical/:order', (req, res) => {
      })
 })
 
-
+router.get('/adaptations/rating/:order', (req,res) => {
+    let sql= `select * from adaptations order by rating ${req.params.order}`;
+    db.query(sql, (err, result) => {
+        if(err)
+        res.status(400).end('Some issue occured');
+        res.json(result)
+    })
+})
 
 module.exports= router
