@@ -108,6 +108,7 @@ router.get('/filterLive/*', (req,res) => {
     });
 })
 
+//To filter comics on the basis of their status
 router.get('/comics/filterByStatus/:status', (req, res) => {
     let sql= `select *, C.Name as Name, G.Name as Genres from Comics C inner join Comic_Genre CG on C.Comic_id= CG.Comic_id and C.Origin_id= CG.Origin_id
     inner join Genre G on CG.Genre_id= G.Genre_id where status= "${req.params.status}"`
@@ -117,6 +118,7 @@ router.get('/comics/filterByStatus/:status', (req, res) => {
     });
 })
 
+//To filter novels on the basis of their status
 router.get('/novels/filterByStatus/:status', (req, res) => {
     let sql=  `select *, N.Name as Name, G.Name as Genres from Novels N inner join Novel_Genre NG on N.Book_id= NG.Book_id
     inner join Genre G on NG.Genre_id= G.Genre_id where status= "${req.params.status}"`
@@ -126,16 +128,19 @@ router.get('/novels/filterByStatus/:status', (req, res) => {
     });
 })
 
-router.get('/anime/filterByRating/:rating', (req, res)=> {
+//To filter specific adaptations having an acceptable rating
+router.get('/:type/filterByRating/:rating', (req, res)=> {
     let sql=  `select *, A.Name as Name, G.Name as Genres, C.Synopsis from Adaptations A inner join Comic_Genre CG on A.Comic_id= CG.Comic_id and A.Origin_id= CG.Origin_id
     inner join Genre G on CG.Genre_id= G.Genre_id inner join (Select Origin_id, Comic_id, Synopsis from comics) as C on C.Comic_id= A.Comic_id and C.Origin_id= A.Origin_id
-    inner join Anime ANI on A.Type= ANI.Type and A.Adapt_id= ANI.Adapt_id where rating>${req.params.rating};`
+    inner join ${req.params.type} ANI on A.Type= ANI.Type and A.Adapt_id= ANI.Adapt_id where rating>${req.params.rating};`
     db.query(sql, (err,result) => {
         if(err) throw err;
         res.json(mutateAdapt(result));
     });
 })
 
+
+//To filter specific adaptations having rating in a range
 router.get('/:type/filterByRatingBetween/:lrate/:urate', (req, res)=> {
     let sql=  `select *, A.Name as Name, G.Name as Genres, C.Synopsis from Adaptations A inner join Comic_Genre CG on A.Comic_id= CG.Comic_id and A.Origin_id= CG.Origin_id
     inner join Genre G on CG.Genre_id= G.Genre_id inner join (Select Origin_id, Comic_id, Synopsis from comics) as C on C.Comic_id= A.Comic_id and C.Origin_id= A.Origin_id
@@ -146,14 +151,6 @@ router.get('/:type/filterByRatingBetween/:lrate/:urate', (req, res)=> {
     });
 })
 
-router.get('/live/filterByRating/:rating', (req, res)=> {
-    let sql=  `select *, A.Name as Name, G.Name as Genres, C.Synopsis from Adaptations A inner join Comic_Genre CG on A.Comic_id= CG.Comic_id and A.Origin_id= CG.Origin_id
-    inner join Genre G on CG.Genre_id= G.Genre_id inner join (Select Origin_id, Comic_id, Synopsis from comics) as C on C.Comic_id= A.Comic_id and C.Origin_id= A.Origin_id
-    inner join live ANI on A.Type= ANI.Type and A.Adapt_id= ANI.Adapt_id where rating>${req.params.rating};`
-    db.query(sql, (err,result) => {
-        if(err) throw err;
-        res.json(mutateAdapt(result));
-    });
-})
+
 
 module.exports= router

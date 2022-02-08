@@ -52,16 +52,20 @@ router.post('/insertNovel', (req, res) => {
     const json= req.body
     //console.log(json);
     const genre= json.Genres
-    console.log(genre.length);
+    // console.log(genre.length);
     let sql= `insert into Novels values (${json.Book_id},"${json.Name}","${json.Status}","${json.Origin}",${json.Total_Chapter},${json.Release_Date},"${json.Last_Updated}","${json.Author_Name}","${json.Url}","${json.Image}","${json.Synopsis}");`
     for(let i=0; i<genre.length; i++)
     {
-        sql+=`insert into Novel_Genre values (${genre[i]},${json.Book_id});`
+       sql+=`insert into Novel_Genre values (${genre[i]},${json.Book_id});`
     }
-    //console.log(sql);
+    console.log(sql);
     db.query(sql, (err, result) => {
+    //    console.log(err.sqlMessage);
         if(err)
-        res.status(400).end("Primary key or reference integrity violated")
+        {
+            res.send(err.sqlMessage)  
+        }
+        else
         res.send('record inserted successfully')
     }) 
 })

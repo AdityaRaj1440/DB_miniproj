@@ -52,7 +52,8 @@ const PostNovel = () => {
             axios.post(`http://localhost:3000/Novels/insertNovel`,postData)
             .then(res=>{
                 console.log(res.data)
-                alert('Record Inserted Successfully !!')
+                let msg= res.data 
+                alert(msg)
             })
             .catch(err => {
                 console.log(err)

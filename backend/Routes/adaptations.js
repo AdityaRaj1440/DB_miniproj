@@ -47,7 +47,8 @@ router.post('/insertAdaptation', (req, res) => {
     console.log(sql);
     db.query(sql, (err, result) => {
         if(err)
-        res.status(400).end("Comic entry not found. Please complete its Comic details first.")
+        res.send(err.sqlMessage)
+        else
         res.send('record inserted successfully')
     }) 
 })
