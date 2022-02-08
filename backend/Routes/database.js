@@ -1,9 +1,10 @@
 const mysql= require('mysql')
+require('dotenv').config()
 let pool= mysql.createPool({
     connectionLimit: 3,
     host: 'localhost',
     user: 'root',
-    password: 'Iitjee@2019',
+    password: ``,
     database: 'miniproj',
     multipleStatements: true
 })
