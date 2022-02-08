@@ -3,8 +3,8 @@ require('dotenv').config()
 let pool= mysql.createPool({
     connectionLimit: 3,
     host: 'localhost',
-    user: 'root',
-    password: ``,
+    user: 'hs',
+    password: `1234`,
     database: 'miniproj',
     multipleStatements: true
 })

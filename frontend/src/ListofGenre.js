@@ -2,7 +2,7 @@
 const ListofGenre = ({handleCheck}) =>{
     
     return(
-    <div className="form-check boundary "> 
+    <div className="form-check boundary-api "> 
         <div className="row">
 
             <div className="column" >

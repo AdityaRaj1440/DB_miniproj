@@ -31,7 +31,7 @@ const Genres = () => {
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
                     <div style = {{ display: 'flex' ,justifyContent: 'space-between' }}>
                         <h2>GENRES</h2>
-                        <a className='pa3 i mt1' href='http://localhost:3000/showGenre/filterComic/harem'>Get all genres</a>
+                        <a className='pa3 i mt1' href='http://localhost:3000/showGenre'>Get all genres</a>
                    </div><hr />
 
                     <p><b> GET  /genre</b><br />Get the primary information based on genre.</p>

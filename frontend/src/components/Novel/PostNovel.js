@@ -77,7 +77,9 @@ const PostNovel = () => {
             <Menu />
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
-                    <h2>NOVELS</h2><hr />
+                <div style = {{ display: 'flex' ,justifyContent: 'space-between' }}>
+                    <h2 className='head'>NOVELS</h2>
+                   </div><hr />
                     <p><b> POST  /novel</b><br />Post the primary information about a novel.</p>
 
                     <form className=" w3-margin pa1 " onSubmit={onSubmitChange} method='POST'>
@@ -94,7 +96,8 @@ const PostNovel = () => {
                                 />
                             <label className="ma3 " >Status</label>
                                 <select 
-                                type="name"  
+                            className='selectbox'
+                            type="name"  
                                 placeholder='status'
                                 onChange={(e)=> setStatus(e.target.value)} >
                                     <option value="Ongoing">Ongoing</option>
@@ -102,6 +105,7 @@ const PostNovel = () => {
                                 </select>
                             <label className="ma3 " >Origin</label>
                             <select 
+                            className='selectbox'
                             type="name"  
                             placeholder='origin id'
                             onChange={(e)=> setOrigin(e.target.value)} >
@@ -116,7 +120,9 @@ const PostNovel = () => {
                                 />
                             <label className="ma3 " >Release Year</label>
                                 <input type="number"
-                                placeholder='Release_Date'
+                                placeholder='YYYY'
+                                min="1800"
+                                max="2100"
                                 onChange={(e)=>setRelease_Date(e.target.value)}
                                 />
                             <label className="ma3 " >Last_Updated</label>
@@ -131,15 +137,12 @@ const PostNovel = () => {
                                 /> 
                             <label className="ma3 " >Url</label>
                                 <input type="name"  
-                                className="form-control"
                                 placeholder='Url'
                                 onChange={(e)=>setUrl(e.target.value)}
                                 /> 
                             <label className="ma3 " >Image Url</label>
                                 <input type="name"  
                                 placeholder='Image'
-                                className="form-control"
-
                                 onChange={(e)=>setImage(e.target.value)}
                                 /> 
 
@@ -157,7 +160,7 @@ const PostNovel = () => {
                         </div>
                         
                         <div className="w3-margin">
-                            <button type="submit"  className="btn-  pa3 w3-round-xlarge " style={{width:'80px'}}>Send</button>
+                            <button type="submit"  className="pa3 w3-round-xlarge " style={{width:'6em'}}>Send</button>
                         </div>      
                           
                     </form>    

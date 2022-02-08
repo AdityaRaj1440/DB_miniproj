@@ -73,7 +73,9 @@ const PostAdaptation = () => {
             <Menu />
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
-                    <h2>ADAPTATIONS</h2><hr />
+                   <div style = {{ display: 'flex' ,justifyContent: 'space-between' }}>
+                    <h2 className='head'>ADAPTATIONS</h2>
+                    </div><hr />                    
                     <p><b> POST  /Adaptation/insertAdaptation</b><br />Post the primary information about an adaptation.</p>
 
                     <form className=" w3-margin pa1 " onSubmit={onSubmitChange} method='POST'>
@@ -97,7 +99,8 @@ const PostAdaptation = () => {
 
                             <label className="ma3 " >Origin_id</label>
                             <select 
-                                type="name"  
+                            className='selectbox'
+                            type="name"  
                                 onChange={(e)=> setOrigin_id(e.target.value)} >
                                     <option value="JPN">JAPANESE</option>
                                     <option value="CHN">CHINESE</option>
@@ -115,13 +118,11 @@ const PostAdaptation = () => {
                                 />
                             <label className="ma3 " >Image Url</label>
                                 <input type="name"  
-                                className="form-control"
                                 placeholder='Image' required
                                 onChange={(e)=>setImage(e.target.value)}
                                 />      
                             <label className="ma3 " >Url</label>
                                 <input type="name"  
-                                className="form-control"
                                 placeholder='Url' required
                                 onChange={(e)=>setUrl(e.target.value)}
                                 /> 
@@ -156,7 +157,8 @@ const PostAdaptation = () => {
                                 />
                             <label className="ma3 " >Mode</label>
                                 <select 
-                                type="name"  
+                            className='selectbox'
+                            type="name"  
                                 onChange={(e)=> setmode(e.target.value)} >
                                     <option value="SER">SERIES</option>
                                     <option value="MOV">MOVIES</option>
@@ -176,7 +178,7 @@ const PostAdaptation = () => {
                         </div>
                         
                         <div className="w3-margin">
-                            <button type="submit"  className="btn-  pa3 w3-round-xlarge " style={{width:'80px'}}>Send</button>
+                            <button type="submit"  className=" pa3 w3-round-xlarge " style={{width:'6em'}}>Send</button>
                         </div>        
                     </form>    
                 </div>

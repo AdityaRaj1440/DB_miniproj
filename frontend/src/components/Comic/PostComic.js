@@ -71,7 +71,9 @@ const PostComic = () => {
             <Menu />
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
-                    <h2>COMICS</h2><hr />
+                   <div style = {{ display: 'flex' ,justifyContent: 'space-between' }}>
+                    <h2 className='head'>COMICS</h2>
+                    </div><hr />
                     <p><b> POST  /Comic/insertComic</b><br />Post the primary information about a comic.</p>
 
                     <form className=" w3-margin pa1 " onSubmit={onSubmitChange} method='POST'>
@@ -79,6 +81,7 @@ const PostComic = () => {
                         <div className=''>
                             <label className="ma3 " >Origin_id</label>
                             <select 
+                            className='selectbox'
                             type="name"  
                             onChange={(e)=> setOrigin_id(e.target.value)} >
                                 <option value="JPN">JPN</option>
@@ -98,7 +101,8 @@ const PostComic = () => {
                                 />
                             <label className="ma3 " >Status</label>
                                 <select 
-                                type="name"  
+                            className='selectbox'
+                            type="name"  
                                 onChange={(e)=> setStatus(e.target.value)} >
                                     <option value="Ongoing">Ongoing</option>
                                     <option value="Completed">Completed</option>
@@ -110,20 +114,21 @@ const PostComic = () => {
                                 />
                             <label className="ma3 " >Other_Media</label>
                                 <select 
-                                type="name"  
+                            className='selectbox'
+                            type="name"  
                                 onChange={(e)=> setOther_Media(e.target.value)} >
                                     <option value="Y">YES</option>
                                     <option value="N">NO</option>
                                 </select>
                             <label className="ma3 " >Url</label>
                                 <input type="name"  
-                                className="form-control"
+                                
                                 placeholder='Url' required
                                 onChange={(e)=>setUrl(e.target.value)}
                                 /> 
                             <label className="ma3 " >Image Url</label>
                                 <input type="name"  
-                                className="form-control"
+                                
                                 placeholder='Image' required
                                 onChange={(e)=>setImage(e.target.value)}
                                 /> 
@@ -142,7 +147,7 @@ const PostComic = () => {
                         </div>
                         
                         <div className="w3-margin">
-                            <button type="submit"  className="btn-  pa3 w3-round-xlarge " style={{width:'80px'}}>Send</button>
+                            <button type="submit"  className="pa3 w3-round-xlarge " style={{width:'6em'}}>Send</button>
                         </div>        
                     </form>    
                 </div>
