@@ -3,7 +3,9 @@ const db= require('./database')
 const merge= require('../functions/GenreMerge')
 const mutate= require('../functions/MutateJson')
 
+//To fetch all comics
 router.get('/', (req, res) => {
+    let type= req.params.type;
     let sql=  `select *, C.Name as Name, G.Name as Genres from Comics C inner join Comic_Genre CG on C.Comic_id= CG.Comic_id and C.Origin_id= CG.Origin_id
     inner join Genre G on CG.Genre_id= G.Genre_id`
     db.query(sql, (err, result) => {
@@ -14,6 +16,7 @@ router.get('/', (req, res) => {
     })
 })
 
+//To fetch a specific Comic on the basis of its name
 router.use('/name/:name', (req, res) => {
     let sql= `select *, C.Name as Name, G.Name as Genres from Comics C inner join Comic_Genre CG on C.Comic_id= CG.Comic_id and C.Origin_id= CG.Origin_id
     inner join Genre G on CG.Genre_id= G.Genre_id and C.Name= '${req.params.name}'`
@@ -24,6 +27,7 @@ router.use('/name/:name', (req, res) => {
     })
 })
 
+//To fetch a specific Comic on the basis of its id
 router.get('/id/:origin/:id', (req, res) => {
     let sql= `select *, C.Name as Name, G.Name as Genres from Comics C inner join Comic_Genre CG on C.Comic_id= CG.Comic_id and C.Origin_id= CG.Origin_id
     inner join Genre G on CG.Genre_id= G.Genre_id and C.Comic_id= ${parseInt(req.params.id)} and C.Origin_id= '${req.params.origin}'`
@@ -34,6 +38,7 @@ router.get('/id/:origin/:id', (req, res) => {
     })
 })
 
+//To fetch list of comics of specific origin
 router.get('/origin/:origin', (req, res) => {
     let sql= `select *, C.Name as Name, G.Name as Genres from Comics C inner join Comic_Genre CG on C.Comic_id= CG.Comic_id and 
     C.Origin_id= CG.Origin_id inner join Genre G on CG.Genre_id= G.Genre_id and C.Origin_id= "${req.params.origin}" 
@@ -46,6 +51,7 @@ router.get('/origin/:origin', (req, res) => {
     })
 })
 
+//To insert a new comic details
 router.post('/insertComic', (req, res) => {
     
     const json= req.body
@@ -58,7 +64,8 @@ router.post('/insertComic', (req, res) => {
     console.log(sql);
     db.query(sql, (err, result) => {
         if(err)
-        res.status(400).end("Primary key or reference integrity violated")
+        res.send(err.sqlMessage)
+        else
         res.send('record inserted successfully')
     }) 
 })
