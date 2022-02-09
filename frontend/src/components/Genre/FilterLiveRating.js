@@ -3,15 +3,14 @@ import axios from 'axios'
 import Menu from '../../Menu'
 import Header from '../../Header'
 
-const Genres = () => {
-    
-    const [name,setname]=useState('')
+const FilterLiveRating = () => {
+    const [Rating,setRating]=useState('')
     const [flag,setFlag]=useState(false)
     const [result,setResult]=useState({})
 
     const onSubmitChange = (e) => {
         e.preventDefault()
-        axios.get(`http://localhost:3000/showGenre`)
+        axios.get(`http://localhost:3000/showGenre/live/filterByRating/${Rating}`)
         .then(res=>{
             console.log(res.data)
             setResult(res.data)
@@ -30,29 +29,27 @@ const Genres = () => {
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
                     <div style = {{ display: 'flex' ,justifyContent: 'space-between' }}>
-                        <h2>GENRES</h2>
-                        <a className='pa3 i mt1' href='http://localhost:3000/showGenre'>Get all genres</a>
+                        <h2 className='head'>FILTER LIVE ACTION BY RATING</h2>
                    </div><hr />
-
-                    <p><b> GET  /genre</b><br />Get the primary information based on genre.</p>
+                    <p><b> GET  /genre/live/filterByRating</b><br />Get the filtered information about live action.</p>
 
                     <form className=" w3-margin pa1 " onSubmit={onSubmitChange}>
                         Path Params
                         <div className='flexbox'>
-                        <label className="ma3 " >Genre</label>
-                            <input type="name"  
-                            placeholder='genre name'
-                            onChange={(e)=>setname(e.target.value)}
-                            />
+                            <label className="ma3 " >Rating</label>
+                                <input type="decimal"  
+                                placeholder='Rating' required
+                                onChange={(e)=>setRating(e.target.value)}
+                                />
                         </div>
                         <div className="w3-margin">
-                            <button type="submit" className="btn-  pa3 w3-round-xlarge " style={{width:'80px'}}>Send</button>
+                            <button type="submit" className="pa3 w3-round-xlarge " style={{width:'6em'}}>Send</button>
                         </div>        
                     </form>    
                     <div style={{marginLeft: '10px'}} >
                         {
-                            flag ? <div className='boundary'>
-                            <a href={`http://localhost:3000/showGenre`} className='b i pa1'>http://localhost:3000/showGenre</a>
+                            flag ? <div className='boundary-api'>
+                            <a href={`http://localhost:3000/showGenre/live/filterByRating/${Rating}`} className='b i pa1'>http://localhost:3000/showGenre/live/filterByRating/${Rating}</a>
                                 </div>
                             : <></>
                         }
@@ -63,4 +60,4 @@ const Genres = () => {
     )
 }
 
-export default Genres
+export default FilterLiveRating

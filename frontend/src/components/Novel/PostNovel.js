@@ -77,24 +77,27 @@ const PostNovel = () => {
             <Menu />
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
-                    <h2>NOVELS</h2><hr />
+                <div style = {{ display: 'flex' ,justifyContent: 'space-between' }}>
+                    <h2 className='head'>NOVELS</h2>
+                   </div><hr />
                     <p><b> POST  /novel</b><br />Post the primary information about a novel.</p>
 
                     <form className=" w3-margin pa1 " onSubmit={onSubmitChange} method='POST'>
                         <div className=''>
                             <label className="ma3 " >Book_id</label>
                                 <input type="number"  
-                                placeholder='origin id'
+                                placeholder='origin id' required
                                 onChange={(e)=>setBook_id(e.target.value)}
                                 />
                             <label className="ma3 " >Name</label>
                                 <input type="name"  
-                                placeholder='Name'
+                                placeholder='Name' required
                                 onChange={(e)=>setname(e.target.value)}
                                 />
                             <label className="ma3 " >Status</label>
                                 <select 
-                                type="name"  
+                            className='selectbox'
+                            type="name"  
                                 placeholder='status'
                                 onChange={(e)=> setStatus(e.target.value)} >
                                     <option value="Ongoing">Ongoing</option>
@@ -102,6 +105,7 @@ const PostNovel = () => {
                                 </select>
                             <label className="ma3 " >Origin</label>
                             <select 
+                            className='selectbox'
                             type="name"  
                             placeholder='origin id'
                             onChange={(e)=> setOrigin(e.target.value)} >
@@ -111,35 +115,34 @@ const PostNovel = () => {
                             </select>
                             <label className="ma3 " >Total_Chapter</label>
                                 <input type="number"  
-                                placeholder='Total_Chapter'
+                                placeholder='Total_Chapter' required
                                 onChange={(e)=>setTotal_Chapter(e.target.value)}
                                 />
                             <label className="ma3 " >Release Year</label>
                                 <input type="number"
-                                placeholder='Release_Date'
+                                placeholder='YYYY'
+                                min="1800"
+                                max="2100" required
                                 onChange={(e)=>setRelease_Date(e.target.value)}
                                 />
                             <label className="ma3 " >Last_Updated</label>
                                 <input type="date"  
-                                placeholder='Last_Updated'
+                                placeholder='Last_Updated' required
                                 onChange={(e)=>setLast_Updated(e.target.value)}
                                 />
                             <label className="ma3 " >Author_Name</label>
                                 <input type="name"  
-                                placeholder='Author_Name'
+                                placeholder='Author_Name' required
                                 onChange={(e)=>setAuthor_Name(e.target.value)}
                                 /> 
                             <label className="ma3 " >Url</label>
                                 <input type="name"  
-                                className="form-control"
-                                placeholder='Url'
+                                placeholder='Url' required
                                 onChange={(e)=>setUrl(e.target.value)}
                                 /> 
                             <label className="ma3 " >Image Url</label>
                                 <input type="name"  
-                                placeholder='Image'
-                                className="form-control"
-
+                                placeholder='Image' required
                                 onChange={(e)=>setImage(e.target.value)}
                                 /> 
 
@@ -147,7 +150,7 @@ const PostNovel = () => {
                             <textarea
                                 type="name" 
                                 placeholder='Synopsis'
-                                className="form-control"
+                                className="form-control" required
                                 onChange={(e)=>setSynopsis(e.target.value)}
                                 rows="6"
                             /> 
@@ -157,7 +160,7 @@ const PostNovel = () => {
                         </div>
                         
                         <div className="w3-margin">
-                            <button type="submit"  className="btn-  pa3 w3-round-xlarge " style={{width:'80px'}}>Send</button>
+                            <button type="submit"  className="pa3 w3-round-xlarge " style={{width:'6em'}}>Send</button>
                         </div>      
                           
                     </form>    

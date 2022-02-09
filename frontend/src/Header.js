@@ -1,12 +1,32 @@
 
 
+let adminstatus = true
 const Header = () => {
     return(
+
             <header className="header">  
                 
                 <div className="header-image">
-                </div>
 
+
+                    
+                    {
+                        adminstatus 
+                        ?
+                        <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href='/'><button className="btn btn-primary login" type="button">LOGOUT</button></a>
+                        </div> 
+                        :
+                        <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href='/'><button className="btn btn-primary login" type="button">HOME PAGE</button></a>
+                        </div> 
+                    }
+                        
+
+
+                
+
+                </div>
                 {/* <nav style = {{display : 'flex', justifyContent : 'flex-end'}}>
                     <div className="header-img">
                         <div>
@@ -19,10 +39,10 @@ const Header = () => {
  
                     {/* <p className = 'f3 link dim underline black pa4 pointer'>
                         Signup
-                    </p>
-                    <p className = 'f3 link dim underline black pa4 pointer'>
-                        Login
                     </p> */}
+                    {/* <nav style = {{display : 'flex', justifyContent : 'flex-end'}}>
+                        
+                    </nav>  */}
             </header>
     )
 }

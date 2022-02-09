@@ -23,15 +23,18 @@ const Comic = () => {
             // alert(err)   
         })
     }
-
+    // let pw = process.env.REACT_APP_PASSWORD
     return(
         <div>
             <Header />
             <Menu />
             <div>
+                
+
+
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
                    <div style = {{ display: 'flex' ,justifyContent: 'space-between' }}>
-                        <h2>COMICS</h2>
+                        <h2 className='head'>COMICS</h2>
                         <a className='pa3 i mt1 ' href='http://localhost:3000/Comics'>Get all comics</a>
                    </div><hr />
                    
@@ -49,13 +52,9 @@ const Comic = () => {
                         </div>
                         <div className='flexbox'>
                             <label className="ma3 " >Origin_id</label>
-                            {/*
-                            <input type="name"  
-                            placeholder='origin id' required
-                            onChange={(e)=>setOrigin_id(e.target.value)}
-                            /> */}
                             <select 
                             type="name"  
+                            className='selectbox'
                             placeholder='origin id'
                             onChange={(e)=> setOrigin_id(e.target.value)} >
                                 <option value="JPN">JPN</option>
@@ -65,12 +64,12 @@ const Comic = () => {
                             
                         </div><br />
                         <div className="w3-margin">
-                            <button type="submit" className="btn-  pa3 w3-round-xlarge " style={{width:'80px'}}>Send</button>
+                            <button type="submit" className=" pa3 w3-round-xlarge " style={{width:'6em'}}>Send</button>
                         </div>        
                     </form>    
                     <div style={{marginLeft: '10px'}} >
                         {
-                            flag ? <div className='boundary'>
+                            flag ? <div className='boundary-api'>
                             <div className='mb3 b'> Name : {result.Name} <br/><br/> Genres : {result.Genres} </div> <hr />
                             <a href={`http://localhost:3000/Comics/id/${Origin_id}/${Comic_id}`} className='b i pa1'>http://localhost:3000/Comics/name/${Origin_id}/${Comic_id}</a>
                                 </div>

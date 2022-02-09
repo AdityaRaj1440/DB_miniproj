@@ -3,25 +3,23 @@ import axios from 'axios'
 import Menu from '../../Menu'
 import Header from '../../Header'
 
-const Genres = () => {
-    
-    const [name,setname]=useState('')
+const SortByRelease = () => {
+    const [order,setorder]=useState('ASC')
     const [flag,setFlag]=useState(false)
     const [result,setResult]=useState({})
 
     const onSubmitChange = (e) => {
         e.preventDefault()
-        axios.get(`http://localhost:3000/showGenre`)
+        axios.get(`http://localhost:3000/sort/Music/byReleaseDate/${order}`)
         .then(res=>{
             console.log(res.data)
             setResult(res.data)
             setFlag(true)
         })
-        .catch(err =>  {
+        .catch(err => {
             console.log(err)
             // alert(err)   
-        })    
-    }
+        })    }
        
     return(
         <div>
@@ -30,29 +28,31 @@ const Genres = () => {
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
                     <div style = {{ display: 'flex' ,justifyContent: 'space-between' }}>
-                        <h2>GENRES</h2>
-                        <a className='pa3 i mt1' href='http://localhost:3000/showGenre'>Get all genres</a>
-                   </div><hr />
-
-                    <p><b> GET  /genre</b><br />Get the primary information based on genre.</p>
+                        <h2 className='head'>SORTING BY RELEASE DATE</h2>
+                    </div><hr />
+                    <p><b> GET /Sort/ReleaseDate </b><br />Get the sorted information about comics , novels.</p>
 
                     <form className=" w3-margin pa1 " onSubmit={onSubmitChange}>
                         Path Params
+                        
                         <div className='flexbox'>
-                        <label className="ma3 " >Genre</label>
-                            <input type="name"  
-                            placeholder='genre name'
-                            onChange={(e)=>setname(e.target.value)}
-                            />
-                        </div>
+                        <label className="ma3 " >Order</label>
+                        <select 
+                            type="name"  
+                            className='selectbox'
+                            onChange={(e)=> setorder(e.target.value)} >
+                                <option value="ASC">BY LOWEST</option>
+                                <option value="DESC">BY HIGHEST</option>
+                            </select>
+                        </div><br />
                         <div className="w3-margin">
-                            <button type="submit" className="btn-  pa3 w3-round-xlarge " style={{width:'80px'}}>Send</button>
+                            <button type="submit" className="pa3 w3-round-xlarge " style={{width:'6em'}}>Send</button>
                         </div>        
                     </form>    
                     <div style={{marginLeft: '10px'}} >
                         {
-                            flag ? <div className='boundary'>
-                            <a href={`http://localhost:3000/showGenre`} className='b i pa1'>http://localhost:3000/showGenre</a>
+                            flag ? <div className='boundary-api'>
+                            <a href={`http://localhost:3000/sort/Music/byReleaseDate/${order}`} className='b i pa1'>http://localhost:3000/Music/byReleaseDate/${order}</a>
                                 </div>
                             : <></>
                         }
@@ -63,4 +63,4 @@ const Genres = () => {
     )
 }
 
-export default Genres
+export default SortByRelease;

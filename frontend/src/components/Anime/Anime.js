@@ -30,7 +30,7 @@ const Anime = () => {
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
                     <div style = {{ display: 'flex' ,justifyContent: 'space-between' }}>
-                            <h2>ANIME By Name</h2>
+                            <h2 className='head'>ANIME By Name</h2>
                             <a className='pa3 i mt1 ' href='http://localhost:3000/Anime'>Get all anime</a>
                     </div><hr />
                     
@@ -41,21 +41,22 @@ const Anime = () => {
                         <div className='flexbox'>
                         <label className="ma3 " >Name</label>
                             <input type="name"  
-                            placeholder='anime name'
+                            placeholder='anime name' required
                             onChange={(e)=>setname(e.target.value)}
                             />
                         </div>
                         <div className="w3-margin">
-                            <button type="submit" className="btn-  pa3 w3-round-xlarge " style={{width:'80px'}}>Send</button>
+                            <button type="submit" className="pa3 w3-round-xlarge " style={{width:'6em'}}>Send</button>
                         </div>        
                     </form>    
                     <div style={{marginLeft: '10px'}} >
                         {
-                            flag ? <div className='boundary'>
+                            flag ? <div className='boundary-api'>
                             <div className='mb3 b'> Name : {result.Name} <br/><br/> Genres : {result.Genres} </div> <hr />
                             <a href={`http://localhost:3000/Anime/name/${name}`} className='b i pa1'>http://localhost:3000/Anime/name/${name}</a>
                                 </div>
                             : <></>
+                            
                         }
                     </div>
                 </div>

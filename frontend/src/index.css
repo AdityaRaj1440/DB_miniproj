@@ -1,7 +1,12 @@
+body{
+      background: #b9e5fa;
+
+}
 
 .header{
   display: flex;
   margin-left: 180px;
+  padding-left: 25px;
   /* justify-content: space-around; */
   /* align-items: center; */
   /* background-color: rgb(243, 36, 9); */
@@ -11,10 +16,65 @@
   flex-wrap: wrap;
 }
 
+/* .mainpage{
+  background-color: rgba(140, 248, 230, 0.7)
+} */
+.start{
+  padding-top: 65px;
+}
+.getstart{
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+/* .scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.card {
+  display: inline-block;
+} */
+
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  
+}
+
+.card {
+  flex: 0 0 auto;
+  display: inline-flex;
+  justify-content: space-between;
+  padding:5px 5px; 
+  margin-left: 5px;
+  width: 20rem;
+}
+
+
+.startimg{
+  width: auto;
+  height: 250px;
+  border: 3px solid black;
+}
+
+/* .img99{
+  box-shadow: 5px 10px 18px #e22525;
+} */
+
 
 
 .form-control{
-  width:50%
+  /* width: 30em; */
+  font-size: 0.9em;
+  /* text-align: center; */
+  /* margin-left: 15em; */
+  margin-left: 25%;
+
+  width: 50%
+
 }
 
 .header-image{
@@ -29,23 +89,299 @@
   /* object-fit: contain; */
   object-fit: cover;
   object-position: 100% 0;
-
+  margin-left: 25px; 
   /* background-position: center; */
 }
+ 
+.login{
+  margin-left: 1em;
+  margin-top: 18em;
+  padding: 10px 10px;
+  margin-right: 1.5em;
+}
+.w3-bar-item{
+  text-decoration: none;
+}
 
+
+/* LOGIN */
+
+.login-box {
+  margin-top: 75px;
+  height: auto;
+  background: #1A2226;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+
+.login-title {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 2px;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ECF0F5;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgb(43, 231, 206);
+}
+
+.login-form {
+  margin-top: 35px;
+}
+
+input[type=text] {
+  background-color: #1A2226;
+  border: none;
+  border-bottom: 2px solid #0DB8DE;
+  border-top: 0px;
+  border-radius: 0px;
+  font-weight: bold;
+  font-size: 20px;
+  outline: 0;
+  margin-bottom: 20px;
+  margin-top: 8px;
+  padding-left: 0px;
+  color: #ECF0F5;
+}
+
+input[type=password] {
+  background-color: #1A2226;
+  border: none;
+  border-bottom: 2px solid #0DB8DE;
+  border-top: 0px;
+  border-radius: 0px;
+  font-weight: bold;
+  font-size: 20px;
+  outline: 0;
+  padding-left: 0px;
+  margin-bottom: 20px;
+  margin-top: 8px;
+  color: #ECF0F5;
+}
+
+.form-group {
+  margin-bottom: 40px;
+  outline: 0px;
+}
+
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 2px solid #0DB8DE;
+  outline: 0;
+  background-color: #1A2226;
+  color: #ECF0F5;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0;
+}
+
+label {
+  margin-bottom: 0px;
+}
+
+.form-control-label {
+  font-size: 15 px;
+  color: #6C6C6C;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-top: 10px;
+}
+
+.btn-outline-primary {
+  border-color: #0DB8DE;
+  color: #0DB8DE;
+  border-radius: 0px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.btn-outline-primary:hover {
+  background-color: #0DB8DE;
+  right: 0px;
+}
+
+.login-btm {
+  float: none;
+  /* align-self: center; */
+}
+
+.login-button {
+  /* padding-right: 0px; */
+  /* text-align: right; */
+  margin-bottom: 25px;
+}
+
+.login-text {
+  /* text-align: left; */
+  padding-left: 0px;
+  color: #a4a2a2;
+}
+
+.loginbttm {
+  padding: 10px;
+  /* outline: 0px */
+  /* align-items: center; */
+}
+
+
+
+/* a:hover{
+  color: #ffffff;
+} */
 .heading-name{
   font-style: italic;
+  margin-top: -25px;
+  padding-right: 25px;
+  text-align: center;
   font-family: 'algerian' , 'times new roman';
   font-size: xx-large;
 }
 .row {
   display: flex;
+  padding-bottom:120px ;
 }
 
 .column {
   flex: 33.33%;
   padding: 30px;
   height: 350px; 
+}
+
+/* COMIC */
+.w3-button-c:hover{
+  color: white !important ;
+  background-color: rgb(221, 218, 25) !important;
+}
+.comic1{
+  border: 3px solid black !important;
+  padding-right: 20px;
+  background-color: rgb(221, 218, 25);
+  text-decoration: none;
+}
+.comic2{
+  background-color: rgb(211, 209, 83);
+  border: 2px dashed black !important;
+}
+
+
+/* NOVELS */
+.w3-button-n:hover{
+  color: white !important ;
+  background-color: orange !important;
+}
+.novel1{
+  border: 3px solid black !important;
+  padding-right: 20px;
+  background-color: orange;
+  text-decoration: none;
+}
+.novel2{
+  background-color: #dfad51;
+  border: 2px dashed black !important;
+}
+
+/* GENRES */
+.w3-button-g:hover{
+  color: white !important ;
+  background-color: #3ae73a !important;
+}
+.genre1{
+  border: 3px solid black !important;
+  padding-right: 20px;
+  background-color: #3ae73a;
+  text-decoration: none;
+}
+.genre2{
+  background-color: #70da70;
+  border: 2px dashed black !important;
+}
+
+/* ADAPTATIONS */
+.w3-button-ad:hover{
+  color: white !important ;
+  background-color: rgb(138, 45, 204) !important;
+}
+.adapt1{
+  border: 3px solid black !important;
+  padding-right: 20px;
+  background-color: rgb(138, 45, 204);
+  text-decoration: none;
+}
+.adapt2{
+  background-color: rgb(191, 125, 238);
+  border: 2px dashed black !important;
+}
+
+/* ANIME */
+.w3-button-an:hover{
+  color: white !important ;
+  background-color: royalblue !important;
+}
+.anime1{
+  border: 3px solid black !important;
+  padding-right: 20px;
+  background-color: royalblue;
+  text-decoration: none;
+}
+.anime2{
+  background-color: rgb(135, 163, 246);
+  border: 2px dashed black !important;
+}
+
+/* SORT */
+.w3-button-s:hover{
+  color: white !important ;
+  background-color: violet !important;
+}
+.sort1{
+  border: 3px solid black !important;
+  padding-right: 20px;
+  background-color: violet;
+  text-decoration: none;
+}
+.sort2{
+  background-color: rgb(243, 188, 243);
+  border: 2px dashed black !important;
+}
+
+/* MUSIC */
+.w3-button-m:hover{
+  color: white !important ;
+  background-color: brown !important;
+}
+.music1{
+  border: 3px solid black !important;
+  padding-right: 20px;
+  background-color: brown;
+  text-decoration: none;
+}
+.music2{
+  background-color: rgb(185, 131, 131);
+  border: 2px dashed black !important;
+}
+
+/* LIV_ACTION */
+
+/* .w3-button-l:hover{
+  color: white !important ;
+  background-color: !important;
+} */
+.action1{
+  border: 3px solid black !important;
+  padding-right: 20px;
+  background-color: white;
+  text-decoration: none;
+}
+.action2{
+  background-color: white(230, 169, 230);
+  border: 2px dashed black !important;
 }
 
 
@@ -56,17 +392,17 @@
 } 
 .sidenav {
   height: 100%;
-  width: 205px;
+  width: 230px !important;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgb(226, 220, 220);
+  /* background-color: rgb(177, 241, 241) !important; */
   overflow-x: hidden;
   padding-top: 54px;
 }
 .active {
-  background-color: #04AA6D;
+  background-color: #108d5f;
   color: white;
 }
 
@@ -74,7 +410,7 @@
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
   position: absolute;
   height: 100%;
   overflow-x: hidden;
@@ -91,16 +427,42 @@
   background-color: #04AA6D;
   color: white;
 }
-
+/* 
 .sidebar a:hover:not(.active) {
   background-color: #555;
   color: white;
-}
+} */
 .boundary{
   border : 1px solid black;
   margin:30px auto;
   /* padding-left: 20px; */
-  padding: 30px 16px;
+  /* padding: 30px 16px; */
+  /* padding-left: 200px; */
+  border-radius: 5px;
+  /* margin-left: 0rem !important;  */
+  margin-right: 20px;
+  margin-left: 250px !important;
+  max-height: 500px;
+  margin-top: 30px;
+  /* word-wrap: break-word; */
+  overflow: auto;
+  margin-left: 14rem;
+  text-align: center;
+  font-size: 22px;
+}
+.head{
+  padding-left: 5%;
+  padding-top: 20px;
+  font-size: 40px;
+  font-weight: 600;
+}
+.boundary-api{
+  border : 1px solid black;
+  margin:30px auto;
+  /* padding-left: 20px; */
+  padding: 30px 30px;
+  /* padding-left: 20px; */
+  padding-right: 10px;
   border-radius: 5px;
   margin-right: 5px;
   max-height: 500px;
@@ -108,18 +470,18 @@
   overflow: auto;
 }
 
-
-
 .boundary-menu{
   border : 1px solid rgb(0, 0, 0);
-  margin: 20px 9px ;
+  margin: 20px 10px ;
   padding: 20px 2px;
   color: rgb(27, 27, 27);
   border-radius: 10px;
   /* margin-right: 30px; */
 }
 
-
+.selectbox{
+  width: 13rem;
+}
 div.content {
   /* margin:200px; */
   padding: 1px 16px;

@@ -20,8 +20,10 @@ router.get('/name/:name', (req, res) => {
     let sql= `select *, N.Name as Name, G.Name as Genres from Novels N inner join Novel_Genre NG on N.Book_id= NG.Book_id
     inner join Genre G on NG.Genre_id= G.Genre_id where N.Name= "${req.params.name}"`
     db.query(sql, (err, result) => {
-        if(err)
-        res.status(400).end('No match for the given name')
+        if(err){
+            console.log(err)
+            res.status(400).end('No match for the given name')
+        }
         res.json(merge(result))
     })
 })

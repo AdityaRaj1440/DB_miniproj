@@ -3,15 +3,14 @@ import axios from 'axios'
 import Menu from '../../Menu'
 import Header from '../../Header'
 
-const Genres = () => {
-    
-    const [name,setname]=useState('')
+const FilterComStat = () => {
+    const [Status,setStatus]=useState('')
     const [flag,setFlag]=useState(false)
     const [result,setResult]=useState({})
 
     const onSubmitChange = (e) => {
         e.preventDefault()
-        axios.get(`http://localhost:3000/showGenre`)
+        axios.get(`http://localhost:3000/showGenre/comics/filterByStatus/${Status}`)
         .then(res=>{
             console.log(res.data)
             setResult(res.data)
@@ -30,29 +29,30 @@ const Genres = () => {
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
                     <div style = {{ display: 'flex' ,justifyContent: 'space-between' }}>
-                        <h2>GENRES</h2>
-                        <a className='pa3 i mt1' href='http://localhost:3000/showGenre'>Get all genres</a>
+                        <h2 className='head'>FILTER COMIC BY STATUS</h2>
                    </div><hr />
-
-                    <p><b> GET  /genre</b><br />Get the primary information based on genre.</p>
+                    <p><b> GET  /genre/comics/filterByStatus</b><br />Get the filtered information about comics.</p>
 
                     <form className=" w3-margin pa1 " onSubmit={onSubmitChange}>
                         Path Params
                         <div className='flexbox'>
-                        <label className="ma3 " >Genre</label>
-                            <input type="name"  
-                            placeholder='genre name'
-                            onChange={(e)=>setname(e.target.value)}
-                            />
+                        <label className="ma3 " >Status</label>
+                            <select 
+                                type="name"  
+                                className='selectbox'
+                                onChange={(e)=> setStatus(e.target.value)} >
+                                    <option value="Ongoing">Ongoing</option>
+                                    <option value="Completed">Completed</option>
+                            </select>
                         </div>
                         <div className="w3-margin">
-                            <button type="submit" className="btn-  pa3 w3-round-xlarge " style={{width:'80px'}}>Send</button>
+                            <button type="submit" className="pa3 w3-round-xlarge " style={{width:'6em'}}>Send</button>
                         </div>        
                     </form>    
                     <div style={{marginLeft: '10px'}} >
                         {
-                            flag ? <div className='boundary'>
-                            <a href={`http://localhost:3000/showGenre`} className='b i pa1'>http://localhost:3000/showGenre</a>
+                            flag ? <div className='boundary-api'>
+                            <a href={`http://localhost:3000/showGenre/comics/filterByStatus/${Status}`} className='b i pa1'>http://localhost:3000/showGenre/comics/filterByStatus/${Status}</a>
                                 </div>
                             : <></>
                         }
@@ -63,4 +63,4 @@ const Genres = () => {
     )
 }
 
-export default Genres
+export default FilterComStat
