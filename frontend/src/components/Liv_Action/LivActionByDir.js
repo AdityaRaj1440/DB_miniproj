@@ -39,7 +39,7 @@ const LivActionByDir = () => {
                         <div className='flexbox'>
                         <label className="ma3 " >Director Name</label>
                             <input type="name"  
-                            placeholder='Director name'
+                            placeholder='Director name' required
                             onChange={(e)=>setname(e.target.value)}
                             />
                         </div>

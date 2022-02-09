@@ -41,7 +41,7 @@ const AnimeProd = () => {
                         <div className='flexbox'>
                         <label className="ma3 " >Production Name</label>
                             <input type="name"  
-                            placeholder='production name'
+                            placeholder='production name' required
                             onChange={(e)=>setproduction(e.target.value)}
                             />
                         </div>

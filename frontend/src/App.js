@@ -1,8 +1,8 @@
 
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Signin from "./Signin";
-import Register from "./Register";
+import Login from "./Login";
+// import Register from "./Register";
 import Comic from "./components/Comic/Comic"
 import ComicByName from "./components/Comic/ComicByName";
 import ComicByOrigin from "./components/Comic/ComicByOrigin";
@@ -12,8 +12,8 @@ import NovelsByOrigin from "./components/Novel//NovelsByOrigin";
 import Adaptations from "./components/Adaptation/Adaptations";
 import AdaptationsByName from "./components/Adaptation/AdaptationsByName";
 import PostAdaptation from "./components/Adaptation/PostAdaptation";
-import FilterComic from "./components/Genre/FilterComic";
-import FilterNovel from "./components/Genre/FilterNovel";
+import FilterComic from "./components/Filter/FilterComic";
+import FilterNovel from "./components/Filter/FilterNovel";
 import Sort from "./components/Sort/Sort";
 import PostComic from "./components/Comic/PostComic";
 import PostNovel from "./components/Novel/PostNovel";
@@ -25,15 +25,15 @@ import Music from "./components/Music/Music";
 import LivAction from "./components/Liv_Action/LivAction";
 import LivActionByName from "./components/Liv_Action/LivActionByName";
 import LivActionByDir from "./components/Liv_Action/LivActionByDir";
-import FilterAdaptation from "./components/Genre/FilterAdaptation";
-import FilterAnime from "./components/Genre/FilterAnime";
-import FilterLive from "./components/Genre/FIlterLive";
-import FilterComStat from "./components/Genre/FilterComStat";
-import FilterNovStat from "./components/Genre/FilterNovStat";
-import FilterAniRating from "./components/Genre/FilterAniRating";
-import FilterRating from "./components/Genre/FilterRating";
-import FilterLiveRating from "./components/Genre/FilterLiveRating";
-// import Main from "./Main";
+import FilterAdaptation from "./components/Filter/FilterAdaptation";
+import FilterAnime from "./components/Filter/FilterAnime";
+import FilterLive from "./components/Filter/FIlterLive";
+import FilterComStat from "./components/Filter/FilterComStat";
+import FilterNovStat from "./components/Filter/FilterNovStat";
+import FilterAniRating from "./components/Filter/FilterAniRating";
+import FilterRating from "./components/Filter/FilterRating";
+import FilterLiveRating from "./components/Filter/FilterLiveRating";
+import Main from "./Main";
 import MusicBySinger from "./components/Music/MusicBySinger";
 import SortByRelease from "./components/Sort/SortByRelease";
 const App = () => {
@@ -44,7 +44,7 @@ const App = () => {
         <div >
           <Routes>
 
-            {/* <Route path='/' element={<Main/>} /> */}
+            <Route path='/' element={<Main/>} />
 
             <Route path='/Comic' element={<Comic/>} />
             <Route path='/ComicByName' element={<ComicByName />} />
@@ -87,8 +87,8 @@ const App = () => {
             <Route path='/LivActionByName' element={<LivActionByName />} />
             <Route path='/LivActionByDir' element={<LivActionByDir />} />
             
-            <Route path='/Signin' element={<Signin />} />
-            <Route path='/Register' element={<Register />} />
+            <Route path='/Login' element={<Login />} />
+            {/* <Route path='/Register' element={<Register />} /> */}
           </Routes>
         </div>
 

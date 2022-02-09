@@ -29,12 +29,7 @@ const Comic = () => {
             <Header />
             <Menu />
             <div>
-                <div>
-                    <button>LOGOUT</button>
-                </div>
-                <div>
-                    <button>SIGNIN</button>
-                </div>
+                
 
 
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>

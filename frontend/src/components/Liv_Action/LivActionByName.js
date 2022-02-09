@@ -42,7 +42,7 @@ const LivActionByName = () => {
                         <div className='flexbox'>
                         <label className="ma3 " >Name</label>
                             <input type="name"  
-                            placeholder='live action name'
+                            placeholder='live action name' required
                             onChange={(e)=>setname(e.target.value)}
                             />
                         </div>

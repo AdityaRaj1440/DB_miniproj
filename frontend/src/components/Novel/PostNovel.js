@@ -86,12 +86,12 @@ const PostNovel = () => {
                         <div className=''>
                             <label className="ma3 " >Book_id</label>
                                 <input type="number"  
-                                placeholder='origin id'
+                                placeholder='origin id' required
                                 onChange={(e)=>setBook_id(e.target.value)}
                                 />
                             <label className="ma3 " >Name</label>
                                 <input type="name"  
-                                placeholder='Name'
+                                placeholder='Name' required
                                 onChange={(e)=>setname(e.target.value)}
                                 />
                             <label className="ma3 " >Status</label>
@@ -115,34 +115,34 @@ const PostNovel = () => {
                             </select>
                             <label className="ma3 " >Total_Chapter</label>
                                 <input type="number"  
-                                placeholder='Total_Chapter'
+                                placeholder='Total_Chapter' required
                                 onChange={(e)=>setTotal_Chapter(e.target.value)}
                                 />
                             <label className="ma3 " >Release Year</label>
                                 <input type="number"
                                 placeholder='YYYY'
                                 min="1800"
-                                max="2100"
+                                max="2100" required
                                 onChange={(e)=>setRelease_Date(e.target.value)}
                                 />
                             <label className="ma3 " >Last_Updated</label>
                                 <input type="date"  
-                                placeholder='Last_Updated'
+                                placeholder='Last_Updated' required
                                 onChange={(e)=>setLast_Updated(e.target.value)}
                                 />
                             <label className="ma3 " >Author_Name</label>
                                 <input type="name"  
-                                placeholder='Author_Name'
+                                placeholder='Author_Name' required
                                 onChange={(e)=>setAuthor_Name(e.target.value)}
                                 /> 
                             <label className="ma3 " >Url</label>
                                 <input type="name"  
-                                placeholder='Url'
+                                placeholder='Url' required
                                 onChange={(e)=>setUrl(e.target.value)}
                                 /> 
                             <label className="ma3 " >Image Url</label>
                                 <input type="name"  
-                                placeholder='Image'
+                                placeholder='Image' required
                                 onChange={(e)=>setImage(e.target.value)}
                                 /> 
 
@@ -150,7 +150,7 @@ const PostNovel = () => {
                             <textarea
                                 type="name" 
                                 placeholder='Synopsis'
-                                className="form-control"
+                                className="form-control" required
                                 onChange={(e)=>setSynopsis(e.target.value)}
                                 rows="6"
                             /> 

@@ -41,7 +41,7 @@ const Novels = () => {
                         <div>
                         <label className="ma3 " >Book_id</label>
                             <input type="number"  
-                            placeholder='book id'
+                            placeholder='book id' required
                             onChange={(e)=>setBook_id(e.target.value)}
                             />
                         </div><br />

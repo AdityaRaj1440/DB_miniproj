@@ -56,6 +56,7 @@ const Anime = () => {
                             <a href={`http://localhost:3000/Anime/name/${name}`} className='b i pa1'>http://localhost:3000/Anime/name/${name}</a>
                                 </div>
                             : <></>
+                            
                         }
                     </div>
                 </div>

@@ -8,6 +8,9 @@ const Menu = () => {
                     ANIME EXPLORER
                 </h3>
             </div>
+                {/* <button class="btn btn-primary login" type="button">LOGOUT</button>
+                        <button className="login">LOGIN </button> */}
+
                 <h3 className="w3-bar-item active" >MENU</h3>
             <div className="boundary-menu">
                 

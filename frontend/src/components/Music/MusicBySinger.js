@@ -39,7 +39,7 @@ const MusicBySinger = () => {
                       <div className='flexbox'>
                       <label className="ma3" >Singer Name</label>
                           <input type="name"  
-                          placeholder='singer name'
+                          placeholder='singer name' required
                           onChange={(e)=>setname(e.target.value)}
                           />
                       </div><br />

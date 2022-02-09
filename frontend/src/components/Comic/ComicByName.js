@@ -40,7 +40,7 @@ const ComicByName = () => {
                         <div className='flexbox'>
                         <label className="ma3" >Name</label>
                             <input type="name"  
-                            placeholder='comic name'
+                            placeholder='comic name' required
                             onChange={(e)=>setname(e.target.value)}
                             />
                         </div><br />

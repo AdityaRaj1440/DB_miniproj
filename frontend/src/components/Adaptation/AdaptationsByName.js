@@ -41,7 +41,7 @@ const AdaptationsByName = () => {
                         <div className='flexbox'>
                         <label className="ma3 " >Adaptations</label>
                             <input type="name"  
-                            placeholder='adaptation name'
+                            placeholder='adaptation name' required
                             onChange={(e)=>setname(e.target.value)}
                             />
                         </div><br />

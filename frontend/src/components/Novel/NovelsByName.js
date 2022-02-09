@@ -39,7 +39,7 @@ const NovelsByName = () => {
                         <div>
                         <label className="ma3 " >Name</label>
                             <input type="name"  
-                            placeholder='novel name'
+                            placeholder='novel name' required
                             onChange={(e)=>setname(e.target.value)}
                             />
                         </div><br />
