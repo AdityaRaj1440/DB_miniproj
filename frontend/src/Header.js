@@ -1,31 +1,66 @@
+import { useNavigate} from "react-router-dom"
+import React, { useState ,useEffect} from 'react'
+import handleAuth from './Login'
+import axios from 'axios'
 
 
-let adminstatus = false
-const Header = () => {
+const Header = ({auth}) => {
+    // const [as,setAs] = useState(false)
+    // let adminstatus = false
+    console.log(typeof(auth))
+    var as = false
+    if(auth){
+        if(typeof auth === "string"){
+            as = ( auth === 'true')
+        }
+        else{
+            as = auth
+        }
+    }
+   
+   console.log("var",as)
+    const navigate = useNavigate()
+
+    const handlelogout = () =>{
+        
+        // e.preventDefault()
+        
+        axios.get(`http://localhost:3000/adminLogout`)
+        .then(res=>{
+
+            console.log(res)
+            // alert(res.data[0].Result)
+            sessionStorage.setItem('auth',false)
+            navigate("/")
+            
+        })
+        .catch(err => console.log(err))
+    }
+
     return(
 
             <header className="header">  
                 
                 <div className="header-image">
+                    {console.log("test: ",as)}
 
-
-                    
                     {
-                        adminstatus 
+                        
+                        as
                         ?
+                        
                         <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <a href='/'><button className="btn btn-primary login" type="button">LOGOUT</button></a>
+                            <button className="btn btn-primary login" 
+                            type="button"
+                            onClick={ () => handlelogout()} >LOGOUT</button>
                         </div> 
+                        
                         :
                         <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <a href='/'><button className="btn btn-primary login" type="button">HOME PAGE</button></a>
+                            <a href='/Login'><button className="btn btn-primary login" type="button">LOGIN</button></a>
                         </div> 
                     }
                         
-
-
-                
-
                 </div>
                 {/* <nav style = {{display : 'flex', justifyContent : 'flex-end'}}>
                     <div className="header-img">

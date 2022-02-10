@@ -3,7 +3,7 @@ import axios from 'axios'
 import Menu from '../../Menu'
 import Header from '../../Header'
 
-const Comic = () => {
+const Comic = ({auth}) => {
     
     const [Comic_id,setComic_id]=useState('')
     const [Origin_id,setOrigin_id]=useState('JPN')
@@ -26,7 +26,7 @@ const Comic = () => {
     // let pw = process.env.REACT_APP_PASSWORD
     return(
         <div>
-            <Header />
+            <Header auth={auth}/>
             <Menu />
             <div>
                 
@@ -71,7 +71,7 @@ const Comic = () => {
                         {
                             flag ? <div className='boundary-api'>
                             <div className='mb3 b'> Name : {result.Name} <br/><br/> Genres : {result.Genres} </div> <hr />
-                            <a href={`http://localhost:3000/Comics/id/${Origin_id}/${Comic_id}`} className='b i pa1'>http://localhost:3000/Comics/name/${Origin_id}/${Comic_id}</a>
+                            <a href={`http://localhost:3000/Comics/id/${Origin_id}/${Comic_id}`} className='b i pa1'  target='__blank'>http://localhost:3000/Comics/name/${Origin_id}/${Comic_id}</a>
                                 </div>
                             : <></>
                         }

@@ -3,7 +3,7 @@ import axios from 'axios'
 import Menu from '../../Menu'
 import Header from '../../Header'
 
-const FilterAniRating = () => {
+const FilterAniRating = ({auth} ) => {
     const [Rating,setRating]=useState('')
     const [flag,setFlag]=useState(false)
     const [result,setResult]=useState({})
@@ -24,7 +24,7 @@ const FilterAniRating = () => {
        
     return(
         <div>
-            <Header />
+            <Header  auth={auth} />
             <Menu />
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
@@ -49,7 +49,7 @@ const FilterAniRating = () => {
                     <div style={{marginLeft: '10px'}} >
                         {
                             flag ? <div className='boundary-api'>
-                            <a href={`http://localhost:3000/showGenre/anime/filterByRating/${Rating}`} className='b i pa1'>http://localhost:3000/showGenre/anime/filterByRating/${Rating}</a>
+                            <a href={`http://localhost:3000/showGenre/anime/filterByRating/${Rating}`} className='b i pa1' target='__blank'>http://localhost:3000/showGenre/anime/filterByRating/${Rating}</a>
                                 </div>
                             : <></>
                         }

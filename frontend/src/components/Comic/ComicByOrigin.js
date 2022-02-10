@@ -3,7 +3,7 @@ import axios from 'axios'
 import Menu from '../../Menu'
 import Header from '../../Header'
 
-const ComicByOrigin = () => {
+const ComicByOrigin = ( {auth} ) => {
     
     const [Origin_id,setOrigin_id]=useState('JPN')
     const [flag,setFlag]=useState(false)
@@ -25,7 +25,7 @@ const ComicByOrigin = () => {
        
     return(
         <div>
-            <Header />
+            <Header  auth={auth} />
             <Menu />
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
@@ -55,7 +55,7 @@ const ComicByOrigin = () => {
                     <div style={{marginLeft: '10px'}} >
                         {
                             flag ? <div className='boundary-api'>
-                            <a href={`http://localhost:3000/Comics/origin/${Origin_id}`} className='b i pa1'>http://localhost:3000/Comics/origin/${Origin_id}</a>
+                            <a href={`http://localhost:3000/Comics/origin/${Origin_id}`} className='b i pa1' target='__blank'>http://localhost:3000/Comics/origin/${Origin_id}</a>
                                 </div>
                             : <></>
                         }
