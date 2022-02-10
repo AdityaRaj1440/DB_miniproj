@@ -18,6 +18,7 @@ const Login = () => {
         axios.get(`http://localhost:3000/adminLogin/${username}/${password}`)
         .then(res=>{
             console.log(res)
+            alert(res.data[0].Result)
             navigate("/Comic")
         })
         .catch(err => console.log(err))

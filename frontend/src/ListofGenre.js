@@ -10,6 +10,7 @@ const ListofGenre = ({handleCheck}) =>{
                     <input type='checkbox'
                         className="form-check-input"
                         id='1'
+                        value='Adventure'
                         onChange={handleCheck}
                         /> Adventure
                 </label>
@@ -17,6 +18,7 @@ const ListofGenre = ({handleCheck}) =>{
                     <input type='checkbox'
                         className="form-check-input"
                         id='2'
+                        value='Action'
                         onChange={handleCheck }
                         /> Action
                 </label>
@@ -24,6 +26,7 @@ const ListofGenre = ({handleCheck}) =>{
                     <input type='checkbox'
                         className="form-check-input"
                         id='3'
+                        value='Adult'
                         onChange={handleCheck }
                         /> Adult
                 </label>

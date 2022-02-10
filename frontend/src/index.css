@@ -59,7 +59,10 @@ body{
   height: 250px;
   border: 3px solid black;
 }
-
+img{
+  width:20rem ;
+  height: auto;
+}
 /* .img99{
   box-shadow: 5px 10px 18px #e22525;
 } */

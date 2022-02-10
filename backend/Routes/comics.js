@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 //To fetch a specific Comic on the basis of its name
 router.use('/name/:name', (req, res) => {
     let sql= `select *, C.Name as Name, G.Name as Genres from Comics C inner join Comic_Genre CG on C.Comic_id= CG.Comic_id and C.Origin_id= CG.Origin_id
-    inner join Genre G on CG.Genre_id= G.Genre_id and C.Name= '${req.params.name}'`
+    inner join Genre G on CG.Genre_id= G.Genre_id and C.Name like '%${req.params.name}%'`
     db.query(sql, (err, result) => {
         if(err)
         res.status(400).end('No match for the given name')

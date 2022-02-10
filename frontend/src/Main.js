@@ -61,7 +61,7 @@ const Main = () => {
             <Card Type={'Novels'} name={'Sevens'}/>
             <Card Type={'Novels'} name={'Martial Peak'}/>
             <Card Type={'Novels'} name={ "Chaotic Sword God"}/>
-            {/* <Card Type={'Novels'} name={'Let Me Game in Peace'}/> */}
+            <Card Type={'Novels'} name={'MEMORIZE'}/>
             {/* <Card Type={'Novels'} name={"Godly Model Creator "}/> */}
         </div>
       </div>
@@ -77,14 +77,14 @@ const Main = () => {
                 </div>
               </center>
             </div>
-              {/* <Card Type={'Music'} name={"SAITAMA SONG- All it takes"}/>
+              <Card Type={'Music'} name={"SAITAMA SONG- All it takes"}/>
               <Card Type={'Music'} name={'Todoroki Rap- Frostbite'}/>
               <Card Type={'Music'} name={'Gojo Rap- Running in Blind'}/>
               <Card Type={'Music'} name={'Eren Jaeger Rap- Titans'}/>
               <Card Type={'Music'} name={'Uchiha Rap Cypher'}/>
               <Card Type={'Music'} name={'Gon Rap- Forgive Me'}/>
               <Card Type={'Music'} name={ "Jin Mori Rap- The God of High School"}/>
-              <Card Type={'Music'} name={ "LUFFY, ZORO & SANJI RAP- Monster Trio"}/> */}
+              <Card Type={'Music'} name={ "LUFFY, ZORO & SANJI RAP- Monster Trio"}/>
           </div>
         </div>
 

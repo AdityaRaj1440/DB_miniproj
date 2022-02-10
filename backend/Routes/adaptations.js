@@ -3,6 +3,7 @@ const db= require('./database')
 const mutate= require('../functions/AdaptationMerge')
 const merge= require('../functions/GenreMerge')
 
+//To fetch all adaptations
 router.get('/', (req, res) => {
     let sql=  `select *, A.Name as Name, G.Name as Genres, C.Synopsis from Adaptations A inner join Comic_Genre CG on A.Comic_id= CG.Comic_id and A.Origin_id= CG.Origin_id
     inner join Genre G on CG.Genre_id= G.Genre_id inner join (Select Origin_id, Comic_id, Synopsis from comics) as C on C.Comic_id= A.Comic_id and C.Origin_id= A.Origin_id;`
@@ -13,7 +14,7 @@ router.get('/', (req, res) => {
     })
 })
 
-
+//To fetch adapatations on the basis of their name
 router.get('/name/:name', (req, res) => {
     let sql= `select *, A.Name as Name, G.Name as Genres from Adaptations A inner join Comic_Genre CG on A.Comic_id= CG.Comic_id and A.Origin_id= CG.Origin_id
     inner join Genre G on CG.Genre_id= G.Genre_id  inner join (Select Origin_id, Comic_id, Synopsis from comics) as C on C.Comic_id= A.Comic_id and C.Origin_id= A.Origin_id where A.Name like '%${req.params.name}%'`
@@ -24,6 +25,7 @@ router.get('/name/:name', (req, res) => {
     })
 })
 
+//To fetch an adaptation with exact name mentioned
 router.get('/name/exact/:name', (req, res) => {
     let sql= `select *, A.Name as Name, G.Name as Genres from Adaptations A inner join Comic_Genre CG on A.Comic_id= CG.Comic_id and A.Origin_id= CG.Origin_id
     inner join Genre G on CG.Genre_id= G.Genre_id  inner join (Select Origin_id, Comic_id, Synopsis from comics) as C on C.Comic_id= A.Comic_id and C.Origin_id= A.Origin_id where A.Name ='${req.params.name}'`
@@ -35,6 +37,7 @@ router.get('/name/exact/:name', (req, res) => {
     })
 })
 
+//To insert an adaptation
 router.post('/insertAdaptation', (req, res) => {
     
     const json= req.body
@@ -52,7 +55,5 @@ router.post('/insertAdaptation', (req, res) => {
         res.send('record inserted successfully')
     }) 
 })
-
-
 
 module.exports = router
