@@ -3,7 +3,7 @@ import axios from 'axios'
 import Menu from '../../Menu'
 import Header from '../../Header'
 
-const SortByRelease = () => {
+const SortByRelease = ( {auth} ) => {
     const [order,setorder]=useState('ASC')
     const [flag,setFlag]=useState(false)
     const [result,setResult]=useState({})
@@ -23,7 +23,7 @@ const SortByRelease = () => {
        
     return(
         <div>
-            <Header />
+            <Header  auth={auth}  />
             <Menu />
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
@@ -52,7 +52,7 @@ const SortByRelease = () => {
                     <div style={{marginLeft: '10px'}} >
                         {
                             flag ? <div className='boundary-api'>
-                            <a href={`http://localhost:3000/sort/Music/byReleaseDate/${order}`} className='b i pa1'>http://localhost:3000/Music/byReleaseDate/${order}</a>
+                            <a href={`http://localhost:3000/sort/Music/byReleaseDate/${order}`} className='b i pa1' target='__blank'>http://localhost:3000/Music/byReleaseDate/${order}</a>
                                 </div>
                             : <></>
                         }

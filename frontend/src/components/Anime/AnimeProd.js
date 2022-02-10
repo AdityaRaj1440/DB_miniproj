@@ -5,7 +5,7 @@ import Header from '../../Header'
 
 
 
-const AnimeProd = () => {
+const AnimeProd = ({auth} ) => {
     const [production,setproduction]=useState('')
     const [flag,setFlag]=useState(false)
     const [result,setResult]=useState({})
@@ -26,7 +26,7 @@ const AnimeProd = () => {
        
     return(
         <div>
-            <Header />
+            <Header  auth={auth}  />
             <Menu />
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
@@ -53,7 +53,7 @@ const AnimeProd = () => {
                         {
                             flag ? <div className='boundary-api'>
                             <div className='mb3 b'> Name : {result[0].Production_House} <br/></div> <hr />
-                            <a href={`http://localhost:3000/Anime/production/${production}`} className='b i pa1'>http://localhost:3000/Anime/production/${production}</a>
+                            <a href={`http://localhost:3000/Anime/production/${production}`} className='b i pa1' target='__blank'>http://localhost:3000/Anime/production/${production}</a>
                                 </div>
                             : <></>
                         }

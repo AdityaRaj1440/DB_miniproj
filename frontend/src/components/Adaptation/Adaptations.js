@@ -3,7 +3,7 @@ import axios from 'axios'
 import Menu from '../../Menu'
 import Header from '../../Header'
 
-const Adaptations = () => {
+const Adaptations = ( {auth} ) => {
     
     const [name,setname]=useState('')
     const [flag,setFlag]=useState(false)
@@ -25,7 +25,7 @@ const Adaptations = () => {
        
     return(
         <div>
-            <Header />
+            <Header  auth={auth}  />
             <Menu />
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
@@ -54,7 +54,7 @@ const Adaptations = () => {
                         {
                             flag ? <div className='boundary-api'>
                             <div className='mb3 b'> Name : {result[0].Name}</div> <hr />
-                            <a href={`http://localhost:3000/Adaptations/name/${name}`} className='b i pa1'>http://localhost:3000/Adaptations/name/${name}</a>
+                            <a href={`http://localhost:3000/Adaptations/name/${name}`} className='b i pa1' target='__blank'>http://localhost:3000/Adaptations/name/${name}</a>
                                 </div>
                             : <></>
                         }

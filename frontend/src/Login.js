@@ -2,24 +2,29 @@ import { useNavigate} from "react-router-dom"
 import React, { useState } from 'react'
 import axios from 'axios'
 
-const Login = () => {
+const Login = ({fn}) => {
 
     const navigate = useNavigate()
     
     const [username,setUsername]=useState('')
     const [password,setPassword]=useState('')
-  
+    
+
+    
+    
     const onSubmitChange = (e) => {
         e.preventDefault()
-        // const cred = {
-        //     name : username,
-        //     password:password
-        // }
+
         axios.get(`http://localhost:3000/adminLogin/${username}/${password}`)
         .then(res=>{
-            console.log(res)
+             console.log(res)
             alert(res.data[0].Result)
-            navigate("/Comic")
+            if(res.data[0].Result!=="Admin login failed"){
+                navigate("/Comic")
+                fn(true)
+            }
+            
+            
         })
         .catch(err => console.log(err))
        
@@ -48,7 +53,9 @@ const Login = () => {
                                     <center>
                                         <div className="col-lg-12 loginbttm">
                                             <div className="col-lg-6 login-btm login-button">
-                                                <button type="submit" className="btn btn-outline-primary">LOGIN</button>
+                                                <button type="submit" 
+                                                className="btn btn-outline-primary"
+                                                >LOGIN</button>
                                             </div>
                                         </div>
                                     </center>

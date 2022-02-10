@@ -3,7 +3,7 @@ import axios from 'axios'
 import Menu from '../../Menu'
 import Header from '../../Header'
 
-const LivActionByName = () => {
+const LivActionByName = ( {auth} ) => {
     
   
     
@@ -27,7 +27,7 @@ const LivActionByName = () => {
        
     return(
         <div>
-            <Header />
+            <Header  auth={auth}  />
             <Menu />
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
@@ -54,7 +54,7 @@ const LivActionByName = () => {
                         {
                             flag ? <div className='boundary-api'>
                             <div className='mb3 b'> Name : {result[0].Name} <br/><br/> Genres : {result[0].Genres} </div> <hr />
-                            <a href={`http://localhost:3000/Live/name/${name}`} className='b i pa1'>http://localhost:3000/Live/name/${name}</a>
+                            <a href={`http://localhost:3000/Live/name/${name}`} className='b i pa1' target='__blank'>http://localhost:3000/Live/name/${name}</a>
                                 </div>
                             : <></>
                         }

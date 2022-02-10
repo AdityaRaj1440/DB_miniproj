@@ -4,7 +4,7 @@ import Menu from '../../Menu'
 import Header from '../../Header'
 
 
-const SortByChapter = () => {
+const SortByChapter = ( {auth} ) => {
     const [order,setorder]=useState('ASC')
     const [type,settype]=useState('novels')
     const [flag,setFlag]=useState(false)
@@ -25,7 +25,7 @@ const SortByChapter = () => {
        
     return(
         <div>
-            <Header />
+            <Header  auth={auth} />
             <Menu />
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
@@ -63,7 +63,7 @@ const SortByChapter = () => {
                     <div style={{marginLeft: '10px'}} >
                         {
                             flag ? <div className='boundary-api'>
-                            <a href={`http://localhost:3000/sort/${type}/totalChapters/${order}`} className='b i pa1'>http://localhost:3000/sort/${type}/totalChapters/${order}</a>
+                            <a href={`http://localhost:3000/sort/${type}/totalChapters/${order}`} className='b i pa1' target='__blank'>http://localhost:3000/sort/${type}/totalChapters/${order}</a>
                                 </div>
                             : <></>
                         }

@@ -23,7 +23,7 @@ const Main = () => {
 
 
     {/* <!-- First Grid --> */}
-    <div className="w3-padding  w3-khaki w3-container">
+    <div className="aniimg w3-khaki w3-container">
       <div className="pt2 pb4">
         <div className="pb2">
           <center>
@@ -45,7 +45,7 @@ const Main = () => {
 
 
     {/* <!-- Second Grid --> */}
-      <div className=" w3-padding w3-light-grey  w3-container">
+      <div className="novimg w3-light-grey  w3-container">
         <div className="pt2 pb4">
           <div className="pb2 ">
             <center>
@@ -68,7 +68,7 @@ const Main = () => {
 
 
     {/* <!-- Third Grid --> */}
-        <div className=" w3-padding w3-light-green w3-container">
+        <div className=" w3-light-green musicimg w3-container">
           <div className="pt2 pb4">
             <div className="pb2">
               <center>
@@ -85,6 +85,7 @@ const Main = () => {
               <Card Type={'Music'} name={'Gon Rap- Forgive Me'}/>
               <Card Type={'Music'} name={ "Jin Mori Rap- The God of High School"}/>
               <Card Type={'Music'} name={ "LUFFY, ZORO & SANJI RAP- Monster Trio"}/>
+              <Card Type={'Music'} name={ "Bleach Rap- Soul Reaper Captains"}/>
           </div>
         </div>
 

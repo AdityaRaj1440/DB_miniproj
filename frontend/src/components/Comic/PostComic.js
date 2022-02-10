@@ -7,7 +7,7 @@ import ClearFields from '../../functions/ClearFields'
 
 let genArray= new Array(36)
 
-const PostComic = () => {
+const PostComic = ({auth} ) => {
     const [Origin_id,setOrigin_id]=useState('')
     const [Comic_id,setComic_id]=useState('')
     const [name,setname]=useState('')
@@ -67,7 +67,7 @@ const PostComic = () => {
        
     return(
         <div>
-            <Header />
+            <Header  auth={auth}  />
             <Menu />
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
@@ -147,7 +147,7 @@ const PostComic = () => {
                         </div>
                         
                         <div className="w3-margin">
-                            <button type="submit"  className="pa3 w3-round-xlarge " style={{width:'6em'}}>Send</button>
+                            <button type="submit"  className="pa3 w3-round-xlarge " style={{width:'6em'}} target='__blank'>Send</button>
                         </div>        
                     </form>    
                 </div>

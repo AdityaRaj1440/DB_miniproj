@@ -3,7 +3,7 @@ import axios from 'axios'
 import Menu from '../../Menu'
 import Header from '../../Header'
 
-const Novels = () => {
+const Novels = ({auth}) => {
 
     const [Book_id,setBook_id]=useState('')
     const [flag,setFlag]=useState(false)
@@ -25,7 +25,7 @@ const Novels = () => {
        
     return(
         <div>
-            <Header />
+            <Header auth={auth}/>
             <Menu />
             <div>
                 <div className="w3-container boundary content" style={{marginLeft:'14rem'}}>
@@ -53,7 +53,7 @@ const Novels = () => {
                         {
                             flag ? <div className='boundary-api'>
                             <div className='mb3 b'> Name : {result.Name} <br/><br/> Genres : {result.Genres} </div> <hr />
-                            <a href={`http://localhost:3000/Novels/id/${Book_id}`} className='b i pa1'>http://localhost:3000/Novels/id/${Book_id}</a>
+                            <a href={`http://localhost:3000/Novels/id/${Book_id}`} className='b i pa1' target='__blank'>http://localhost:3000/Novels/id/${Book_id}</a>
                                 </div>
                             : <></>
                         }
